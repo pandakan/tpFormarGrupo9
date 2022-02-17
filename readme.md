@@ -7,7 +7,7 @@
 
 # "Los Ninjas Hermanos"
 
-// Después se puede cambiar el nombre //
+
 ![enter image description here](https://i.ytimg.com/vi/3CgphUwEnyY/hqdefault.jpg)
 ***
   
@@ -32,45 +32,3 @@
 ***  
 
   
-
-/* lo de abajo es una de las descripciones que tendría que tener un readme. me pareció que era la que mas aportaba, lo deje a modo informativo para ustedes, después lo borro */
-
-  
-
-  
-
-Una descripción general del sistema o proyecto.
-
-  
-
-El estado del proyecto, que es particularmente importante si el proyecto está todavía en desarrollo. En él se mencionan los cambios planeados y la dirección de desarrollo del proyecto, y se especifica directamente si un proyecto está terminado.
-
-  
-
-Los requisitos del entorno de desarrollo para la integración.
-
-  
-
-Una guía para la instalación y el funcionamiento.
-
-  
-
-Una lista de las tecnologías utilizadas y, cuando proceda, enlaces con más información.
-
-  
-
-Los proyectos de código abierto que se pueden modificar o desarrollar deben incluir una sección de colaboración deseada en el archivo readme.md: ¿cómo se solucionan los problemas? ¿Cómo deberían los desarrolladores impulsar los cambios?
-
-  
-
-Bugs conocidos y posibles correcciones de errores.
-
-  
-
-Sección de preguntas frecuentes con todas las preguntas planteadas hasta la fecha.
-
-  
-
-Información sobre derechos de autor y licencias.
-```
- 
