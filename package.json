@@ -1,0 +1,23 @@
+{
+  "name": "tpformargrupo9",
+  "version": "1.0.0",
+  "description": "***\r # Proyecto Integrador  Fundación     Formar Curso 9°",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandakan/tpFormarGrupo9.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pandakan/tpFormarGrupo9/issues"
+  },
+  "homepage": "https://github.com/pandakan/tpFormarGrupo9#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
