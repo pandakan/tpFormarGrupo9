@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Registro</title>
+  </head>
+
+  <body>
+    <h2>Formulario de Registro</h2>
+
+    <form class="form-register" action="data.html" method="post">
+      <label for="nombre">Nombre y Apellido</label>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido"
+      />
+      <label for="dni">DNI</label>
+      <input type="number" name="dni" id="dni" placeholder="xx.xxx.xxx" />
+
+      <label for="usuario">Usuario</label>
+      <input type="text" name="usuario" id="usuario" required />
+
+      <label for="clave">Clave</label>
+      <input type="password" name="clave" id="clave" placeholder="xxxxxxx" required/>
+
+      <label for="fecha">Fecha de Nacimeinto</label>
+      <input type="date" name="fecha" id="fecha" placeholder="dd-mm-yyyy" />
+
+      <label for="direccion">Direccion Calle</label>
+      <input type="text" name="direccion" id="direccion" placeholder="Calle" />
+
+      <label for="altura">Altura Piso Departamento</label>
+      <input type="number" name="altura" id="altura" />
+
+      <label for="mail">Email</label>
+      <input type="mail" name="mail" id="mail" placeholder="xxx@yahoo.com" required />
+
+      <label for="telefono">Nro° Celular</label>
+      <input type="tel" name="telefono" id="telefono" />
+
+      <button class="botons" type="reset">Limpiar</button>
+      <button class="botons" type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
