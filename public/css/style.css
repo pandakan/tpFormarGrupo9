@@ -1,8 +1,17 @@
-body {
-    background-color: aqua;
-}
+/* Fuente */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 
+/* Import */
 
-
- 
+@import url("acercaDeNosotros.css");
+@import url("carritoDeCompras.css");
+@import url("detalleDeProducto.css");
+@import url("footer.css");
+@import url("formularios.css");
+@import url("general.css");
+@import url("header.css");
+@import url("menu.css");
+@import url("reservaTuMesa.css");
+@import url("variables.css");
