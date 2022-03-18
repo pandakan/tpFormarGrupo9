@@ -54,7 +54,7 @@ Carlos:
 
 Bryan 
 
-Fernando: 
+Fernando: Estudiante de Desarrollo Web Full Stack con conocimientos en el area de marketing digital. Aspiro a ser programador y poder crecer en el sector IT.
 
 Hernan Gryszkiewicz: Alumno de formar desde el 2021 en la carrera de full stack. Con amplia experiencia en el mundo comercial y la logística, cero experiencia en el sector IT, pero con muchas ganas de aprender y mejorar día a día y ser a futuro un desarrollador 
 
