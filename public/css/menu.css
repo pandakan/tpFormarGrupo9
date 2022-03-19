@@ -2,13 +2,12 @@ section.menu{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
     margin-bottom: 30px;
 }
 
-section.menu h2 {
-    margin-bottom: 5px;
-    margin-top: -10px;
+div.container h2.header_menu {
+    margin-top: 20px;
+    text-align: center;
 }
 
 section.menu img {
@@ -69,16 +68,34 @@ section.menu article button {
     border-radius: 30px;
 }
 
-section.menu a {
+div.container div#irAlCarrito {
     margin-top: 30px;
-    
+    display: flex;
+    justify-content: center;
 }
 
-section.menu a button {
+div.container div#irAlCarrito a button.irAlCarrito {
     border: none;
     background-color: var(--naranja-Fuerte);
     width: 120px;
     height: 40px;
     border-radius: 30px;
     color: white;
+}
+
+@media screen and (min-width: 768px){
+
+    div.container h2.header_menu {
+        margin-top: 20%;
+        text-align: center;
+    }
+
+    section.menu{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
