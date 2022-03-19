@@ -1,0 +1,56 @@
+section.acercaDeNosotros {
+    margin-top: 30px;
+}
+
+section.acercaDeNosotros div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+section.acercaDeNosotros div ul {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+section.acercaDeNosotros div ul li h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+section.acercaDeNosotros div img{
+    object-fit: contain;
+    width: 100vw;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px){
+    
+    section.acercaDeNosotros div {
+        flex-direction: row;
+    }
+    
+    section.acercaDeNosotros div ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    section.acercaDeNosotros div ul li h2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    section.acercaDeNosotros div img{
+        width: 50vw;
+        max-width: 750px;
+        border-radius: 30px;
+        margin-right: 10px;
+        padding-top: 10px;
+    }
+}
+
