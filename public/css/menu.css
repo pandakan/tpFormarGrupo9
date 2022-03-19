@@ -1,0 +1,84 @@
+section.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section.menu h2 {
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+section.menu img {
+    margin-top: 15px;
+    object-fit: contain;
+    width: 200px;
+    height: 140px;
+    border-radius: 20px;
+}
+
+section.menu article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--negro);
+    color: var(--naranja-Fuerte);
+    border-radius: 30px;
+    height: 300px;
+    width: 260px;
+    margin-top: 30px;
+}
+
+section.menu article h3 {
+    margin-top: 10px;
+}
+
+section.menu article p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+section.menu article div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 20px;
+} 
+
+section.menu article div nav {  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section.menu article div nav input {
+    width: 60px;
+    border-radius: 10px;
+}
+
+section.menu article button {
+    margin-top: 10px;
+    border: none;
+    background-color: var(--naranja-Fuerte);
+    color: white;
+    width: 150px;
+    height: 20px;
+    border-radius: 30px;
+}
+
+section.menu a {
+    margin-top: 30px;
+    
+}
+
+section.menu a button {
+    border: none;
+    background-color: var(--naranja-Fuerte);
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    color: white;
+}
