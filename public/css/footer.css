@@ -127,6 +127,7 @@ footer div.end_footer nav#footer_redes_sociales a i {
     footer section div img {
         display: flex;
         width: 110px;
+        margin: 0 auto;
     }
 
     footer section div.footer_info_de_contacto {
@@ -137,6 +138,7 @@ footer div.end_footer nav#footer_redes_sociales a i {
     footer section div p#footer_info_negocio {
         display: flex;
         font-size: 10px;
+        margin-top: 10px;
     }
     
     footer section div ul.footer_menu {
