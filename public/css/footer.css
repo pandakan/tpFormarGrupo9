@@ -1,0 +1,183 @@
+footer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--naranja-Fuerte);
+    background-color: var(--negro);
+    border-radius: 10px 10px 0px 0px;
+}
+
+footer div.footer_titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer div.footer_caracteristicas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer div.footer_caracteristicas nav {
+    text-align: center;
+    margin-top: 20px;
+    width: 33%;
+}
+
+footer div.footer_caracteristicas nav i {
+    background-color: gray;
+    width: 35px;
+    height: 35px;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+footer div.footer_caracteristicas nav p {
+    margin-top: 10px;
+}
+
+footer section div img {
+    display: none;
+}
+
+footer section div p#footer_info_negocio {
+    display: none;
+}
+
+footer section div ul.footer_menu {
+    display: none;
+}
+
+footer section div span#footer_navegacion {
+    display: none;
+}
+
+footer section div span#footer_contacto {
+    display: none;
+}
+
+footer section div.footer_info_de_contacto{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+footer section div.footer_info_de_contacto ul li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+footer section div.footer_info_de_contacto ul li p {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+footer section div iframe {
+    display: none;
+}
+
+footer div.end_footer {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer div.end_footer p {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+footer div.end_footer nav#footer_redes_sociales a i {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    color: var(--naranja-Fuerte);
+}
+
+
+
+@media screen and (min-width: 768px){ 
+
+    footer section {
+        margin-top: 20px;
+    }
+
+
+    footer section div {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    footer section div iframe {
+        display: flex;
+        width: 150px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    footer section div img {
+        display: flex;
+        width: 110px;
+    }
+
+    footer section div.footer_info_de_contacto {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    footer section div p#footer_info_negocio {
+        display: flex;
+        font-size: 10px;
+    }
+    
+    footer section div ul.footer_menu {
+        display: flex;
+    }
+
+    footer section div ul.footer_menu li {
+        margin-bottom: 10px;
+    }
+
+    
+    footer section div span#footer_navegacion {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    
+    footer section div span#footer_contacto {
+        display: flex;
+    }
+
+    footer section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    footer section div ul.footer_menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer div.end_footer p {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 1200px){ 
+    footer section div iframe {
+        display: flex;
+        width: 250px;
+        height: 150px;
+        margin-top: 20px;
+    }
+}

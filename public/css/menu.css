@@ -8,6 +8,7 @@ section.menu{
 div.container h2.header_menu {
     margin-top: 20px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 section.menu img {
