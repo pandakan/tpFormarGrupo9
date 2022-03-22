@@ -1,5 +1,5 @@
 footer {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     color: var(--naranja-Fuerte);
@@ -147,6 +147,7 @@ footer div.end_footer nav#footer_redes_sociales a i {
 
     footer section div ul.footer_menu li {
         margin-bottom: 10px;
+        cursor: pointer;
     }
 
     

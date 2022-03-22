@@ -5,6 +5,11 @@
     font-family: var(--font-montserrat);
 }
 
+html, body {
+    max-width: 100% ;
+    overflow-x: hidden ;
+}
+
 ul, ol {
     list-style: none;
 }

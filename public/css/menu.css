@@ -11,12 +11,18 @@ div.container h2.header_menu {
     text-transform: uppercase;
 }
 
+div.container h2.header_masProductos {
+    margin-top: 20px;
+    text-align: center;
+}
+
 section.menu img {
     margin-top: 15px;
     object-fit: contain;
     width: 200px;
     height: 140px;
     border-radius: 20px;
+
 }
 
 section.menu article {
@@ -67,6 +73,7 @@ section.menu article button {
     width: 150px;
     height: 20px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 div.container div#irAlCarrito {
@@ -82,6 +89,7 @@ div.container div#irAlCarrito a button.irAlCarrito {
     height: 40px;
     border-radius: 30px;
     color: white;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px){
@@ -97,6 +105,24 @@ div.container div#irAlCarrito a button.irAlCarrito {
         flex-direction: row;
         justify-content: space-evenly;
         margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    div.container div#irAlCarrito a button.irAlCarrito {
+        width: 60vw;
+        height: 40vh;
+        max-height: 50px;
+        max-width: 300px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    div.container h2.header_reservaTuMesa {
+        margin-top: 20px;
+        margin-bottom: 30px ;
+    }
+
+    section.reservaTuMesa {
         margin-bottom: 30px;
     }
 }

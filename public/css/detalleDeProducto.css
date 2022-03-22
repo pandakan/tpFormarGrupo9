@@ -1,0 +1,68 @@
+section.detalleDeProducto {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+section.detalleDeProducto img {
+    object-fit: contain;
+    width: 100vw;
+}
+
+section.detalleDeProducto div {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 35vh;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+section.detalleDeProducto div h2 {
+    font-size: 30px;
+}
+
+section.detalleDeProducto div nav {
+    position: relative;
+}
+
+section.detalleDeProducto div nav i {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    font-size: 20px;
+    color: white;
+}
+
+section.detalleDeProducto div nav a button {
+    border: none;
+    background-color: var(--naranja-Fuerte);
+    color: white;
+    width: 60%;
+    max-width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: end;
+    padding-right: 30px;
+}
+
+@media screen and (min-width: 768px){
+    section.detalleDeProducto{
+        display: flex;
+        margin: 40px;
+        margin-top: 55%;
+        justify-content: space-evenly;
+        gap: 30px;
+        align-items: center;
+    }
+
+    section.detalleDeProducto div {
+        max-width: 35vw;
+    }
+
+    section.detalleDeProducto img {
+        width: 50vw;
+        border-radius: 70px;
+    }
+}
