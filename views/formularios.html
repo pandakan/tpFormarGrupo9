@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Home</title>
     <!-- Font awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -38,7 +37,8 @@
             <img id="fondo" src="/images/Img_Header.svg" alt="">
         </header>
         <a href="#" class="a_boton"><button class="boton">Reserva Ya!</button></a>
-    <main class=" forms-container">
+
+    <main class="forms-container">
     <h2>Formulario de Registro:</h2>
     <hr>
 
@@ -64,14 +64,15 @@
         <input type="password" class="input-style" name="Clave2"  placeholder="Confirme su contraseña"/>
         <span class="error-message">Confirme su contraseña</span></div>
 
-    <div class="input_check-container">
+    <!-- <div class="input_check-container">
         <label for="activo">aceptos los<a href="http://">Terminos y condiciones</a></label>
-        <input type="checkbox" class="input-style" name="clave2" id="activo">
-        <span class="error-mesagge">Debe aceptar los terminos</span></div>
-
-
+        <input type="checkbox" class="checkbox-input" name="clave2" id="activo">
+        <span class="error-mesagge">Debe aceptar los terminos</span>
+    </div> -->
     <div class="input-container">
-            <input type="date" class="input-style" name="fecha"  placeholder="fecha nacimiento"/>Fecha nacimiento</div>
+        Fecha nacimiento
+        <input type="date" class="input-style" name="fecha"  placeholder="fecha nacimiento"/>
+    </div>
            
 
      <div class="input-container">
@@ -86,12 +87,19 @@
         <input type="tel" class="input-style" name="tel"  placeholder="Ingrese su telefono"/>
         <span class="error-message">Debe ingresar su telefono</span></div>
 
-          <span class="btn-container"><button class="btn" type="reset">Limpiar</button>
-      <button class="btn" type="submit">Enviar</button></span>
-      
+        <div class="input_check-container">
+            <label for="activo">aceptos los<a href="http://">Terminos y condiciones</a></label>
+            <input type="checkbox" class="checkbox-input" name="clave2" id="activo">
+            <span class="error-mesagge">Debe aceptar los terminos</span>
+        </div>
 
+          <span class="btn-container">
+        <button class="btn" type="reset">Limpiar</button>
+        <button class="btn" type="submit">Enviar</button></span>
     </form>
   </main>
+
+
   <footer>
     <div class="footer_titulo">
         <h2>Hacé tu pedido.</h2>
@@ -158,8 +166,9 @@
         <a href=""><i class="fa-brands fa-twitter"></i></a>
         </nav>
     </div>
-    
+
 </footer>
+    </div>
 <script src="/js/header.js"></script>
   </body>
 </html>
