@@ -94,17 +94,13 @@ div.container div#irAlCarrito a button.irAlCarrito {
 
 @media screen and (min-width: 768px){
 
-    div.container h2.header_menu {
-        margin-top: 20%;
-        text-align: center;
-    }
-
     section.menu{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: 30px;
+        justify-content: center;
+        gap: 30px;
+        
         margin-bottom: 30px;
     }
 

@@ -41,6 +41,7 @@ section.acercaDeNosotros div img{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        max-width: 40vw;
     }
     
     section.acercaDeNosotros div ul li h2 {
@@ -49,7 +50,7 @@ section.acercaDeNosotros div img{
     }
     
     section.acercaDeNosotros div img{
-        width: 50vw;
+        width: 40vw;
         max-width: 750px;
         border-radius: 30px;
         margin-right: 10px;

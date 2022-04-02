@@ -24,9 +24,6 @@ app.get('/formularios', function(req, res){
 app.get('/login', function(req, res){
     res.sendFile(path.join(__dirname, '/views/login.html'));
 });
-app.get('/carritoDeCompras', function(req, res){
-    res.sendFile(path.join(__dirname, '/views/carritoDeCompras.html'));
-});
 
 app.listen(PORT, function(){
     console.log("Servidor levantado en el puerto: " + PORT);

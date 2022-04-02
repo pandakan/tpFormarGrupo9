@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--negro)
 }
 
 header nav.main-nav {
@@ -108,7 +109,7 @@ a.a_boton button.boton{
     width: 33vw;
     height: 50px;
     cursor: pointer;
-    margin-top: 40%;
+    margin-top: 30px;
 }
 
 /* Animacion */
@@ -130,13 +131,9 @@ header nav.main-nav-menu.active{
 
 /* Fin Animacion */
 
-header img#fondo {
+div.container img#fondo {
     object-fit: contain;
     width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0; 
-    z-index: -10;
 }
 
 @media screen and (min-width: 768px){
@@ -157,7 +154,7 @@ header img#fondo {
     }
     
     a.a_boton button.boton{ 
-        margin-top: 20%;
+        display: none;
     }
 
     
@@ -215,10 +212,6 @@ header img#fondo {
     header nav#menu2.main-nav-menu {
         order: 4;
         width: initial;
-    }
-
-    a.a_boton button.boton{ 
-        margin-top: 30%;
     }
     
     header nav.main-nav-menu ul.header_menu li {
