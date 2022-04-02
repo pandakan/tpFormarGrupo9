@@ -32,7 +32,7 @@ section.menu article {
     background-color: var(--negro);
     color: var(--naranja-Fuerte);
     border-radius: 30px;
-    height: 300px;
+    height: auto;
     width: 260px;
     margin-top: 30px;
 }
@@ -66,14 +66,15 @@ section.menu article div nav input {
 }
 
 section.menu article button {
-    margin-top: 10px;
+    margin-top: 30px;
     border: none;
     background-color: var(--naranja-Fuerte);
     color: white;
-    width: 150px;
-    height: 20px;
+    width: 160px;
+    height: 45px;
     border-radius: 30px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 div.container div#irAlCarrito {

@@ -7,15 +7,17 @@ div.container h2.header_reservaTuMesa {
 
 div.container section.reservaTuMesa form div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-bottom: 10px;
+    gap: 60px;
 }
 
 div.container section.reservaTuMesa form div input {
   width: 125px;
   border-radius: 20px;
   border-color: var(--naranja-Fuerte);
-  color: var(--negro)
+  color: var(--negro);
+  text-align: center;
 }
 
 div.container section.reservaTuMesa form div input::placeholder{
@@ -32,22 +34,27 @@ div.container section.reservaTuMesa form div button {
     cursor: pointer;
 }
 
+div.container section.reservaTuMesa form div input:focus {
+    outline: none;
+} 
+
 @media screen and (min-width: 768px){ 
 
     div.container section.reservaTuMesa form div input {
         width: 30%;
-        height: 30px;
+        height: 50px;
         margin-top: 10px;
-        text-align: end;
+        text-align: center;
     }
     
     div.container section.reservaTuMesa form div button {
         width: 30%;
-        height: 30px;
+        height: 50px;
         margin-top: 10px;
     }
 
     div.container section.reservaTuMesa form div input::placeholder{
         font-size: 20px;
+        
     }
 }

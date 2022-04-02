@@ -1,11 +1,12 @@
 header {
-    position: relative;
+    position: fixed;
     padding: 10px;
-    height: 33%;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--negro)
+    background-color: var(--negro);
+    width: 100vw;
 }
 
 header nav.main-nav {
@@ -134,19 +135,20 @@ header nav.main-nav-menu.active{
 div.container img#fondo {
     object-fit: contain;
     width: 100%;
+
 }
 
 @media screen and (min-width: 768px){
     header img#logo{
-        width: 150px;
+        width: 100px;
     }
 
     header nav.main-nav div.header_menuButton button#hamburguer_desplegable i{
-        font-size: 80px;
+        font-size: 50px;
     }
     
     header a i{
-        font-size: 80px;
+        font-size: 50px;
     }
 
     a.a_boton {
@@ -157,7 +159,14 @@ div.container img#fondo {
         display: none;
     }
 
-    
+    div.container img#fondo {
+        position: block;
+        top: 0;
+        right: 0;
+        z-index: -10;
+        height: 500px;
+        object-fit: initial;
+    }
 
 }
 
@@ -168,6 +177,7 @@ div.container img#fondo {
         justify-content: space-between;
         flex-wrap: nowrap;
         align-items: center;
+        padding: 0 30px;
     }
 
     header a {
@@ -176,7 +186,7 @@ div.container img#fondo {
     }
 
     header a i{
-        font-size: 50px;
+        font-size: 30px;
     }
 
     header nav.main-nav {

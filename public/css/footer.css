@@ -12,7 +12,7 @@ footer div.footer_titulo {
     flex-direction: column;
     align-items: center;
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-bottom: 10px;
 }
 
@@ -63,7 +63,7 @@ footer section div span#footer_contacto {
 footer section div.footer_info_de_contacto{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 10px;
 }
 
@@ -87,6 +87,7 @@ footer div.end_footer {
     width: 100vw;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 footer div.end_footer p {
@@ -106,15 +107,16 @@ footer div.end_footer nav#footer_redes_sociales a i {
 @media screen and (min-width: 768px){ 
 
     footer section {
-        margin-top: 20px;
+        margin-top: 60px;
     }
 
 
     footer section div {
         width: 20%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
     }
 
     footer section div iframe {
