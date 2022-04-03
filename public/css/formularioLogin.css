@@ -1,7 +1,7 @@
 div.container section.formularioLogin {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +12,7 @@ div.container section.formularioLogin {
     padding: 20px;
     border-radius: 20px;
     max-width: 350px;
+    margin-bottom: 110px;
 }
 
 div.container section.formularioLogin h2 {
@@ -31,10 +32,15 @@ div.container section.formularioLogin form div input {
     border-radius: 20px;
     border-color: var(--naranja-Fuerte);
     border-style: solid;
+    text-align: center;
 }
 
 div.container section.formularioLogin form div input::placeholder {
     text-align: center;
+}
+
+div.container section.formularioLogin form div input:focus {
+    outline: none;
 }
 
 div.container section.formularioLogin form div button {
@@ -60,7 +66,6 @@ div.container section.formularioLogin form span a{
 
 @media screen and (min-width: 768px){ 
     div.container section.formularioLogin {
-        margin-top: 20%;
         margin-bottom: 50px;
         width: 80vw;
         height: 50vh;
@@ -85,7 +90,7 @@ div.container section.formularioLogin form span a{
         max-height: none;
         width: 50vw;
         max-width: 400px;
-
+        font-size: 20px;
     }
 
     

@@ -12,7 +12,6 @@ section.detalleDeProducto div {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    margin: 0 auto;
     margin-top: 20px;
     height: 35vh;
     justify-content: space-evenly;
@@ -50,19 +49,20 @@ section.detalleDeProducto div nav a button {
 @media screen and (min-width: 768px){
     section.detalleDeProducto{
         display: flex;
-        margin: 40px;
-        margin-top: 55%;
-        justify-content: space-evenly;
-        gap: 30px;
+        margin-top: 160px;
+        justify-content: center;
+        gap: 100px;
         align-items: center;
     }
 
     section.detalleDeProducto div {
-        max-width: 35vw;
+        max-width: 30vw;
     }
 
     section.detalleDeProducto img {
-        width: 50vw;
+        width:40vw;
         border-radius: 70px;
+        margin-left: 50px;
+        max-width: 600px;
     }
 }
