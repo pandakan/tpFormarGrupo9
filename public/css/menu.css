@@ -63,6 +63,7 @@ section.menu article div nav {
 section.menu article div nav input {
     width: 60px;
     border-radius: 10px;
+    outline: none;
 }
 
 section.menu article button {

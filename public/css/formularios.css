@@ -41,12 +41,15 @@ main form {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    border:  solid black;
     border-radius: 10px;
-    border-color: #e85f0c;
+    border: solid 2px var(--naranja-Fuerte);
     width: 90%;
     max-width: 500px;
     
+}
+
+div.container main.forms-container h2{
+    margin-bottom: 20px;
 }
 
 body form .input-container{
@@ -76,12 +79,14 @@ body form span.error-message {
 }
 
 body form input.input-style{
-    border: solid 3px #e85f0c;
+    border: solid 2px #e85f0c;
     border-radius: 20px;
     width: 250px;
     height: 2rem;
     padding: 0.5rem;
     margin: 0.2rem;
+    outline: none;
+    text-align: center;
 }
 
 .btn-container{
@@ -98,13 +103,13 @@ body form input.input-style{
     padding: 0.5rem;
     margin: 0.2rem;
     color: white;
+    cursor: pointer;
     
 }
 
-@media (min-width: 460px){
+@media (min-width: 768px){
     
 main.forms-container {
-  
-    margin-top: 15rem;
+    margin-top: 150px;
 }
 }
