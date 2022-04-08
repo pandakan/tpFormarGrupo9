@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carrito</title>
-        <!-- Font awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+    <%- include("partials/head")  %> 
 <body>
     <div class="container">
         <header>
@@ -117,81 +108,7 @@
             <div class="botonpagar" ><button class="pagar">Pagar</button></div>
         </div>
         -->
-        <footer>
-            <div class="footer_titulo">
-                <h2>Hacé tu pedido.</h2>
-                <h2>¡Nosotros te lo llevamos!</h2>
-            </div>
-            <div class="footer_caracteristicas">
-                <nav>
-                    <i class="fa-solid fa-truck"></i>
-                    <p>Tu pedido llega a tiempo</p>
-                </nav>
-                <nav>
-                    <i class="fa-solid fa-credit-card"></i>
-                    <p>Metodos pagos</p>
-                </nav>
-                <nav>
-                    <i class="fa-solid fa-moon"></i>
-                    <p>Abierto las 24hs</p>
-                </nav>
-            </div>
-
-            <section>
-                <div>
-                    <img src="/images/logofinal.svg" alt="">
-                    <p id="footer_info_negocio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquam cum nesciunt ipsum unde
-                        saepe?</p>
-                </div>
-                <!--
-                <div>
-                    <span id="footer_navegacion">Navegación</span>
-                    <ul class="footer_menu">
-                        <li>Inicio</li>
-                        <li>Productos</li>
-                        <li>Nosotros</li>
-                        <li>Reservas</li>
-                        <li>Contactanos</li>
-                    </ul>
-                </div>
-                -->
-                <div class="footer_info_de_contacto"> 
-                    <ul>
-                        <li>
-                            <span>Contactanos</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>Calle Falsa 123</p>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-clock"></i>
-                            <p>Horarios de Atención</p>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <p>11 - 1234 5678</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <!--<span id="footer_contacto">Contactanos</span>-->
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d5211.320638113945!2d-58.4572462964013!3d-34.63130764960911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x95bcca28bb1e6ba1%3A0xbebde9339a4060bc!2sAv.%20Juan%20Bautista%20Alberdi%202101-2199%2C%20C1406GRK%20CABA!3m2!1d-34.6301585!2d-58.458188299999996!5e0!3m2!1ses-419!2sar!4v1647214346336!5m2!1ses-419!2sar"
-                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </section>
-            <div class="end_footer">
-                <p>Digital House Comisión 13 © - Desarrollado por: Grupo 9</p>
-                <nav id="footer_redes_sociales">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-                </nav>
-            </div>
-            
-        </footer>
+        <%- include("partials/footer")  %> 
     </div>
     <script src="/js/header.js"></script>
     
