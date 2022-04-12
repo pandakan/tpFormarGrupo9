@@ -1,0 +1,77 @@
+div.addProduct{
+    height: auto;
+    width: 75%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: solid 2px var(--naranja-Fuerte);
+    border-radius: 10px;
+}
+
+div.addProduct form{
+    width: 120%;
+}
+
+div.addProduct div{
+    text-align: center;
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.addProduct div label{
+    text-align: start;
+}
+
+div.addProduct div input,
+div.addProduct div select{
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px;
+    outline: none;
+    border: solid 2px var(--naranja-Fuerte);
+    background-color: white;
+}
+
+div.addProduct div#stock{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10px;
+}
+
+div.addProduct div input#stock{
+    height: initial;
+    display: initial;
+    margin-top: initial;
+}
+
+div.addProduct div textarea{
+    outline: none;
+    border: solid 2px var(--naranja-Fuerte);
+    background-color: white;
+    padding: 5px 10px;
+    margin-top: 10px;
+    resize: vertical;
+}
+
+div.addProduct div button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--naranja-Fuerte);
+    outline: none;
+    margin: 0 auto;
+    cursor: pointer;
+    border-style: none;
+    color: white;
+}

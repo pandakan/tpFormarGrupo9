@@ -21,13 +21,17 @@ const productosRouter = require ('./routes/productosRoutes');
 
 const formularioRouter = require ('./routes/formularioRoutes');
 
+const adminRouter = require("./routes/adminRoutes");
 
 
- app.use('/', indexRouter)   
 
- app.use('/formulario', formularioRouter)
+ app.use('/', indexRouter);   
+
+ app.use('/formulario', formularioRouter);
  
- app.use('/productos', productosRouter)
+ app.use('/productos', productosRouter);
+
+ app.use("/admin", adminRouter);
   
   app.listen(PORT, () => {
     console.log(`servidor activo en puerto ${PORT}

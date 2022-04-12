@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head")  %> 
+<body>
+  <%- include('../partials/header') %> 
+  
+  <div class="listaProductosAdmin">
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Stock</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Pizza Vegetariana</td>
+                  <td>1500</td>
+                  <td>Vegetariana</td>
+                  <td>True</td>
+                  <td>
+                    <div>
+                    <a href="productos/editar" class="">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                  </div>
+                    <form action="" method="post">
+                      <button class="" type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+                
+            </tbody>
+          </table>
+      </div>
+
+  
+  <%- include('../partials/footer')  %> 
+</body>
+</html>

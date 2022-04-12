@@ -1,0 +1,57 @@
+div.listaProductosAdmin {
+    height: 100vh;
+}
+
+div.listaProductosAdmin table {
+    width: 75%;
+    margin: 30px auto;
+    border: solid 2px var(--naranja-Fuerte);
+    border-collapse: collapse;
+    padding: 20px;
+    max-width: 1050px;
+}
+
+div.listaProductosAdmin table thead {
+    border: solid 2px var(--negro);
+}
+
+div.listaProductosAdmin table thead tr {
+    background-color: var(--negro);
+    color: white;
+}
+
+div.listaProductosAdmin table thead tr th {
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+div.listaProductosAdmin table tbody tr th,
+div.listaProductosAdmin table tbody tr td {
+    text-align: center;
+    border: solid 2px var(--naranja-Fuerte);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+div.listaProductosAdmin table tbody tr td div {
+    height: auto;
+    width: auto;
+}
+
+div.listaProductosAdmin table tbody tr td div a i {
+    color: var(--negro);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+div.listaProductosAdmin table tbody tr td form button{
+    border: none;
+    background-color: white;
+}
+
+div.listaProductosAdmin table tbody tr td form button i{
+    font-size: 25px;
+    color: var(--negro);
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-footer {
+footer.user {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@ footer {
     border-radius: 10px 10px 0px 0px;
 }
 
-footer div.footer_titulo {
+footer.user div.footer_titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,19 +16,19 @@ footer div.footer_titulo {
     margin-bottom: 10px;
 }
 
-footer div.footer_caracteristicas {
+footer.user div.footer_caracteristicas {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-footer div.footer_caracteristicas nav {
+footer.user div.footer_caracteristicas nav {
     text-align: center;
     margin-top: 20px;
     width: 33%;
 }
 
-footer div.footer_caracteristicas nav i {
+footer.user div.footer_caracteristicas nav i {
     background-color: gray;
     width: 35px;
     height: 35px;
@@ -36,53 +36,53 @@ footer div.footer_caracteristicas nav i {
     border-radius: 50%;
 }
 
-footer div.footer_caracteristicas nav p {
+footer.user div.footer_caracteristicas nav p {
     margin-top: 10px;
 }
 
-footer section div img {
+footer.user section div img {
     display: none;
 }
 
-footer section div p#footer_info_negocio {
+footer.user section div p#footer_info_negocio {
     display: none;
 }
 
-footer section div ul.footer_menu {
+footer.user section div ul.footer_menu {
     display: none;
 }
 
-footer section div span#footer_navegacion {
+footer.user section div span#footer_navegacion {
     display: none;
 }
 
-footer section div span#footer_contacto {
+footer.user section div span#footer_contacto {
     display: none;
 }
 
-footer section div.footer_info_de_contacto{
+footer.user section div.footer_info_de_contacto{
     display: flex;
     justify-content: center;
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
-footer section div.footer_info_de_contacto ul li {
+footer.user section div.footer_info_de_contacto ul li {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 }
 
-footer section div.footer_info_de_contacto ul li p {
+footer.user section div.footer_info_de_contacto ul li p {
     font-size: 15px;
     margin-left: 20px;
 }
 
-footer section div iframe {
+footer.user section div iframe {
     display: none;
 }
 
-footer div.end_footer {
+footer.user div.end_footer {
     display: flex;
     width: 100vw;
     flex-direction: column;
@@ -90,12 +90,12 @@ footer div.end_footer {
     margin-top: 20px;
 }
 
-footer div.end_footer p {
+footer.user div.end_footer p {
     font-size: 10px;
     margin-bottom: 10px;
 }
 
-footer div.end_footer nav#footer_redes_sociales a i {
+footer.user div.end_footer nav#footer_redes_sociales a i {
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -106,12 +106,12 @@ footer div.end_footer nav#footer_redes_sociales a i {
 
 @media screen and (min-width: 768px){ 
 
-    footer section {
+    footer.user section {
         margin-top: 60px;
     }
 
 
-    footer section div {
+    footer.user section div {
         width: 20%;
         display: flex;
         flex-direction: row;
@@ -119,67 +119,67 @@ footer div.end_footer nav#footer_redes_sociales a i {
         align-items: center;
     }
 
-    footer section div iframe {
+    footer.user section div iframe {
         display: flex;
         width: 150px;
         height: 100px;
         margin-top: 20px;
     }
 
-    footer section div img {
+    footer.user section div img {
         display: flex;
         width: 110px;
         margin: 0 auto;
     }
 
-    footer section div.footer_info_de_contacto {
+    footer.user section div.footer_info_de_contacto {
         margin-top: 0px;
         margin-bottom: 0px;
     }
     
-    footer section div p#footer_info_negocio {
+    footer.user section div p#footer_info_negocio {
         display: flex;
         font-size: 10px;
         margin-top: 10px;
     }
     
-    footer section div ul.footer_menu {
+    footer.user section div ul.footer_menu {
         display: flex;
     }
 
-    footer section div ul.footer_menu li {
+    footer.user section div ul.footer_menu li {
         margin-bottom: 10px;
         cursor: pointer;
     }
 
     
-    footer section div span#footer_navegacion {
+    footer.user section div span#footer_navegacion {
         display: flex;
         margin-bottom: 10px;
     }
     
-    footer section div span#footer_contacto {
+    footer.user section div span#footer_contacto {
         display: flex;
     }
 
-    footer section {
+    footer.user section {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
 
-    footer section div ul.footer_menu {
+    footer.user section div ul.footer_menu {
         display: flex;
         flex-direction: column;
     }
 
-    footer div.end_footer p {
+    footer.user div.end_footer p {
         margin-top: 10px;
     }
 }
 
 @media (min-width: 1200px){ 
-    footer section div iframe {
+    footer.user section div iframe {
         display: flex;
         width: 250px;
         height: 150px;

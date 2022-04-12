@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head")  %> 
+<body>
+  <%- include('../partials/header') %> 
+  
+    <div class="addProduct">
+        <legend>AGREGAR PRODUCTO</legend>
+        <form action="">
+            <div>
+              <label for="name">Nombre del producto</label>
+              <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella">
+            </div>
+            <div>
+              <label for="price">Precio del producto</label>
+              <input type="number" name="price" id="price" placeholder="Ej: 1000">
+            </div>
+            <div>
+              <label for="category">Categorias</label>
+              <select name="categoryId">
+                <option selected hidden>Categoría</option>
+                <option value="1">Comun</option>
+                <option value="2">Vegetariana</option>
+              </select>            
+            </div>
+            <div id="stock">
+              <input name="stock" type="checkbox" role="switch" id="stock">
+              <label for="stock">Stock disponible</label>
+            </div>
+            <div>
+              <label for="description">Descripción</label>
+              <textarea name="description" id="description" rows="4"></textarea>
+            </div>
+            <div>
+              <button type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
+    
+  <%- include('../partials/footer')  %> 
+    
+</body>
+</html>

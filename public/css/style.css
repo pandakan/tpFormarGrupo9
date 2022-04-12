@@ -17,3 +17,7 @@
 @import url("reservaTuMesa.css");
 @import url("variables.css");
 @import url("formularioLogin.css");
+
+@import url("admin/adminIndex.css");
+@import url("admin/adminAddProduct.css");
+@import url("admin/adminEditProduct.css");

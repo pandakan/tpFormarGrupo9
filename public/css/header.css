@@ -1,4 +1,4 @@
-header {
+header.user {
     position: fixed;
     padding: 10px;
     height: 100px;
@@ -12,7 +12,7 @@ header {
     z-index: 10;
 }
 
-header nav.main-nav {
+header.user nav.main-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,7 +20,7 @@ header nav.main-nav {
     align-items: center;
 }
 
-header nav.main-nav div.header_menuButton button#hamburguer_desplegable {
+header.user nav.main-nav div.header_menuButton button#hamburguer_desplegable {
     border: none;
     width: 60px;
     height: 60px;
@@ -28,24 +28,24 @@ header nav.main-nav div.header_menuButton button#hamburguer_desplegable {
     
 }
 
-header nav.main-nav div.header_menuButton button#hamburguer_desplegable i {
+header.user nav.main-nav div.header_menuButton button#hamburguer_desplegable i {
     color: var(--naranja-Fuerte);
     font-size: 40px;
     cursor: pointer;
 }
 
-header img#logo{
+header.user img#logo{
     width: 60px;
 }
 
 
-header a i{
+header.user a i{
     text-align: center;
     font-size: 40px;
     color: var(--naranja-Fuerte);
 }
 
-header nav.main-nav-menu {
+header.user nav.main-nav-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +60,7 @@ header nav.main-nav-menu {
     background-color: black;
 }
 
-header div.header_menuClose {
+header.user div.header_menuClose {
     color: var(--naranja-Fuerte);
     font-size: 50px;
     width: 100vw;
@@ -68,12 +68,12 @@ header div.header_menuClose {
     
 }
 
-header div.header_menuClose i {
+header.user div.header_menuClose i {
     padding: 20px;
     
 }
 
-header nav.main-nav-menu ul.header_menu {
+header.user nav.main-nav-menu ul.header_menu {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -83,7 +83,7 @@ header nav.main-nav-menu ul.header_menu {
     padding: 0;
 }
 
-header nav.main-nav-menu ul.header_menu li {
+header.user nav.main-nav-menu ul.header_menu li {
     width: auto;
     text-align: center;
     padding: 10px 20px;
@@ -92,11 +92,11 @@ header nav.main-nav-menu ul.header_menu li {
     transition: all 0.5s ease-in;
 }
 
-header nav.main-nav-menu ul.header_menu li:hover {
+header.user nav.main-nav-menu ul.header_menu li:hover {
     background-color: var(--naranja-Claro);
 }
 
-header nav.main-nav-menu ul.header_menu li a {
+header.user nav.main-nav-menu ul.header_menu li a {
     color: var(--naranja-Fuerte);
     text-transform: uppercase;
 }
@@ -127,7 +127,7 @@ a.a_boton button.boton{
     }
 }
 
-header nav.main-nav-menu.active{
+header.user nav.main-nav-menu.active{
     display: flex;
     opacity: 1;
     animation: menuFadeIn 1s;
@@ -142,15 +142,15 @@ div.container img#fondo {
 }
 
 @media screen and (min-width: 768px){
-    header img#logo{
+    header.user img#logo{
         width: 100px;
     }
 
-    header nav.main-nav div.header_menuButton button#hamburguer_desplegable i{
+    header.user nav.main-nav div.header_menuButton button#hamburguer_desplegable i{
         font-size: 50px;
     }
     
-    header a i{
+    header.user a i{
         font-size: 50px;
     }
 
@@ -175,7 +175,7 @@ div.container img#fondo {
 
 @media (min-width: 1200px){
 
-    header {
+    header.user {
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
@@ -183,21 +183,21 @@ div.container img#fondo {
         padding: 0 30px;
     }
 
-    header a {
+    header.user a {
         order: 3;
         padding: 10px;
     }
 
-    header a i{
+    header.user a i{
         font-size: 30px;
     }
 
-    header nav.main-nav {
+    header.user nav.main-nav {
         display: flex;
         flex-wrap: nowrap;
     }
 
-    header nav.main-nav-menu {
+    header.user nav.main-nav-menu {
         position: initial;
         height: auto;
         padding: 0;
@@ -209,25 +209,25 @@ div.container img#fondo {
         
     }
 
-    header nav.main-nav-menu div.header_menuClose{
+    header.user nav.main-nav-menu div.header_menuClose{
         display: none;
     }
 
-    header nav.main-nav div.header_menuButton {
+    header.user nav.main-nav div.header_menuButton {
         display: none;
     }
     
-    header nav.main-nav-menu ul.header_menu {
+    header.user nav.main-nav-menu ul.header_menu {
         flex-direction: row;
         flex-grow: 0;
     }
 
-    header nav#menu2.main-nav-menu {
+    header.user nav#menu2.main-nav-menu {
         order: 4;
         width: initial;
     }
     
-    header nav.main-nav-menu ul.header_menu li {
+    header.user nav.main-nav-menu ul.header_menu li {
         width: auto;
         background-color: rgba(0, 0, 0, 0);
     }
