@@ -6,7 +6,7 @@
     "email": "gseward0@shutterfly.com",
     "password": "BbloR8lcZJN",
     "category": "user",
-    "image": "user_1.jpg"
+    "image": "usuario1.jpg"
   }, 
   
   {
@@ -16,7 +16,7 @@
     "email": "mdunnion1@jalbum.net",
     "password": "Q7A3ttDjka",
     "category": "user",
-    "image": "user_2.jpg"
+    "image": "usuario2.jpg"
   }, 
   
   {
@@ -26,7 +26,7 @@
     "email": "bironside2@youku.com",
     "password": "vXcntG9",
     "category": "user",
-    "image": "user_3.jpg"
+    "image": "usuario3.jpg"
   }, 
   
   {
@@ -36,7 +36,7 @@
     "email": "mbummfrey3@nasa.gov",
     "password": "9cxRo6zfKd9",
     "category": "user",
-    "image": "user_4.jpg"
+    "image": "usuario4.jpg"
   }, 
   
   {
@@ -46,7 +46,7 @@
     "email": "lbausmann4@4shared.com",
     "password": "047M8DP9l",
     "category": "user",
-    "image": "user_5.jpg"
+    "image": "usuario5.jpg"
   }, 
   
   {
@@ -56,7 +56,7 @@
     "email": "gponten5@addthis.com",
     "password": "eqSyCM",
     "category": "user",
-    "image": "user_6.jpg"
+    "image": "usuario6.jpg"
   }, 
   
   {
@@ -66,6 +66,6 @@
     "email": "kbootherstone6@list-manage.com",
     "password": "ZkP4y8QBuNKE",
     "category": "user",
-    "image": "user_7.jpg"
+    "image": "usuario7.jpg"
   }
 ]
