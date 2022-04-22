@@ -1,0 +1,71 @@
+[
+    {
+    "id": 1,
+    "first_name": "Gard",
+    "last_name": "Seward",
+    "email": "gseward0@shutterfly.com",
+    "password": "BbloR8lcZJN",
+    "category": "user",
+    "image": "user_1.jpg"
+  }, 
+  
+  {
+    "id": 2,
+    "first_name": "Malchy",
+    "last_name": "Dunnion",
+    "email": "mdunnion1@jalbum.net",
+    "password": "Q7A3ttDjka",
+    "category": "user",
+    "image": "user_2.jpg"
+  }, 
+  
+  {
+    "id": 3,
+    "first_name": "Bradly",
+    "last_name": "Ironside",
+    "email": "bironside2@youku.com",
+    "password": "vXcntG9",
+    "category": "user",
+    "image": "user_3.jpg"
+  }, 
+  
+  {
+    "id": 4,
+    "first_name": "Mallory",
+    "last_name": "Bummfrey",
+    "email": "mbummfrey3@nasa.gov",
+    "password": "9cxRo6zfKd9",
+    "category": "user",
+    "image": "user_4.jpg"
+  }, 
+  
+  {
+    "id": 5,
+    "first_name": "Lorilee",
+    "last_name": "Bausmann",
+    "email": "lbausmann4@4shared.com",
+    "password": "047M8DP9l",
+    "category": "user",
+    "image": "user_5.jpg"
+  }, 
+  
+  {
+    "id": 6,
+    "first_name": "Gifford",
+    "last_name": "Ponten",
+    "email": "gponten5@addthis.com",
+    "password": "eqSyCM",
+    "category": "user",
+    "image": "user_6.jpg"
+  }, 
+  
+  {
+    "id": 7,
+    "first_name": "Keenan",
+    "last_name": "Bootherstone",
+    "email": "kbootherstone6@list-manage.com",
+    "password": "ZkP4y8QBuNKE",
+    "category": "user",
+    "image": "user_7.jpg"
+  }
+]
