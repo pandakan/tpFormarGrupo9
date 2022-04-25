@@ -3,17 +3,17 @@
 <%- include("../partials/head")  %> 
 <body>
   <%- include('../partials/header') %> 
- 
+
   <div class="addProduct">
-    <legend>Editar Producto: Nombre</legend>
-    <form action="">
+    <legend>Editar Producto: <%= producto.name  %> </legend>
+    <form action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST">
         <div>
           <label for="name">Nombre del producto</label>
-          <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella">
+          <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella" value="<%= producto.name  %>">
         </div>
         <div>
           <label for="price">Precio del producto</label>
-          <input type="number" name="price" id="price" placeholder="Ej: 1000">
+          <input type="number" name="price" id="price" placeholder="Ej: 1000" value="<%= producto.price  %>">
         </div>
         <div>
           <label for="category">Categorias</label>
@@ -24,12 +24,12 @@
           </select>            
         </div>
         <div id="stock">
-          <input name="stock" type="checkbox" role="switch" id="stock">
+          <input <%= producto.stock ? "checked" : "" %>   name="stock" type="checkbox" role="switch" id="stock">
           <label for="stock">Stock disponible</label>
         </div>
         <div>
           <label for="description">Descripción</label>
-          <textarea name="description" id="description" rows="4"></textarea>
+          <textarea name="description" id="description" rows="4"><%= producto.description %></textarea>
         </div>
         <div>
           <button type="submit">Editar</button>
@@ -37,7 +37,6 @@
     </form>
 </div>
 
- 
   <%- include('../partials/footer')  %> 
     
 </body>

@@ -3,8 +3,7 @@ const {getProduct} = require('../data');
 
 module.exports = {
 
-  /*  getAll: (req,res) => {
-              
+    /*  getAll: (req,res) => {
         res.set({"content-type":"text/plain;charset=utf-8"})  
         getProduct.forEach(element => {
         res.write(`${element.name}\n`)
