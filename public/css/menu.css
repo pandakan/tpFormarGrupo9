@@ -32,7 +32,7 @@ section.menu article {
     background-color: var(--negro);
     color: var(--naranja-Fuerte);
     border-radius: 30px;
-    height: auto;
+    height: 360px;
     width: 260px;
     margin-top: 30px;
 }
@@ -64,6 +64,7 @@ section.menu article div nav input {
     width: 60px;
     border-radius: 10px;
     outline: none;
+    text-align: center;
 }
 
 section.menu article button {

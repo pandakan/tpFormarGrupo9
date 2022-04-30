@@ -1,55 +1,16 @@
 <section class="menu">
-    <article>
-        <a href="/productos"><img src="/images/Pizza_1.png"  alt=""></a>
-        
-        <h3 >Pizza Vegana</h3>
-        <p>Pimiento verde, cebolla dulce, pepperoni, etc</p>
-        <div>
-            <p>Precio: $123</p>
-            <nav>
-                <input type="number">
-            </nav>
-        </div>
-        <button> Añadir al carrito</button>
-    </article>
-
-    <article>
-        <a href="/productos"><img src="/images/Pizza_2.png" alt=""></a>
-        <h3>Pizza Vegana</h3>
-        <p>Pimiento verde, cebolla dulce, pepperoni, etc</p>
-        <div>
-            <p>Precio: $123</p>
-            <nav>
-                <input type="number">
-            </nav>
-        </div>
-        <button> Añadir al carrito</button>
-    </article>
-
-    <article>
-        <a href="/productos"><img src="/images/Pizza_3.png" alt=""></a>
-        <h3>Pizza Vegana</h3>
-        <p>Pimiento verde, cebolla dulce, pepperoni, etc</p>
-        <div>
-            <p>Precio: $123</p>
-            <nav>
-                <input type="number">
-            </nav>
-        </div>
-        <button> Añadir al carrito</button>
-    </article>
-
-    <article>
-        <a href="/productos"><img src="/images/Pizza_4.png" alt=""></a>
-        <h3>Pizza Vegana</h3>
-        <p>Pimiento verde, cebolla dulce, pepperoni, etc</p>
-        <div>
-            <p>Precio: $123</p>
-            <nav>
-                <input type="number">
-            </nav>
-        </div>
-        <button> Añadir al carrito</button>
-    </article>
-    
+    <% productos.forEach(producto => { %>
+        <article>
+            <a href="/productos/detalle/<%= producto.id  %> "><img src="/images/<%= producto.image %>"  alt=""></a>
+            <h3><%= producto.name %></h3>
+            <p><%= producto.description %></p>
+            <div>
+                <p><%= producto.price %></p>
+                <nav>
+                    <input type="number">
+                </nav>
+            </div>
+            <button>Añadir al carrito</button>
+        </article>
+    <% }) %> 
 </section>

@@ -1,7 +1,9 @@
-module.exports ={
+const { getProducts } = require('../data'); 
 
+module.exports ={
     index: (req, res) => {   
-        res.render('index')
+        res.render('index',{
+            productos: getProducts,
+        })
     }
-     
 }

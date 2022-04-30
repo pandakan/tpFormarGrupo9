@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("partials/head")  %> 
+    <%- include("../partials/head") -%> 
 
 <body>
 <div class="container">
@@ -36,24 +36,24 @@
 
     <!-- Seccion Detalle de Producto -->
     <section class="detalleDeProducto">
-        <img src="/images/pizza_de_pepperoni_74152_600.jpg" alt="">
+        <img src="/images/<%= product.image  %> " alt="">
         <div>
-            <h2>Pizza Vegana</h2>
-            <h2>$1.290</h2>
+            <h2><%= product.name %> </h2>
+            <h2><%= product.price  %> </h2>
             <nav>
                 <a href="#"><button>Agregar</button></a>
                 <i class="fa-solid fa-cart-shopping"></i>
             </nav>
-            <p> Pimiento verde italiano, cebolla dulce, gramos de pepperoni, pellizcos de orégano y pimienta, vaso de tomate triturado, pieza de queso cheddar rallado.</p>
+            <p><%= product.description  %> </p>
         </div>
     </section>
 
     <!-- Section Menu -->
 
     <h2 class="header_masProductos">Ver mas productos</h2>
-    <%- include("partials/menu")  %> 
+    <%- include("../partials/menu") -%> 
 
-    <%- include("partials/footer")  %> 
+    <%- include("../partials/footer") -%> 
 </div>
     <script src="/js/header.js"></script>
 </body>

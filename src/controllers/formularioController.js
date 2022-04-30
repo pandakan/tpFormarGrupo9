@@ -1,11 +1,11 @@
 module.exports ={
 
     formulario: (req, res) => {   
-        res.render('formularios')
+        res.render('users/registro')
 
     },
     login: (req, res) => {   
-        res.render('login')
+        res.render('users/login')
     }
      
     }

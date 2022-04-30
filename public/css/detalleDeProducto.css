@@ -44,6 +44,7 @@ section.detalleDeProducto div nav a button {
     border-radius: 20px;
     text-align: end;
     padding-right: 30px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px){
