@@ -1,4 +1,5 @@
 const { getProducts, writeProducts } = require('../../data');
+const { validationResult } = require("express-validator");
 
 
 module.exports = {
@@ -16,26 +17,37 @@ module.exports = {
     },
 
     productCreate: (req, res) => {
+        let errors = validationResult(req);
 
-        let lastId = 0;
-        getProducts.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id;
+        if (errors.isEmpty()) {
+            let lastId = 0;
+            getProducts.forEach(product => {
+                if(product.id > lastId){
+                    lastId = product.id;
+                }
+            });
+
+            let newProduct = {
+                ...req.body, 
+                id: lastId + 1,
+                image: req.file ? req.file.filename : "default-image.png",
+                stock: req.body.stock ? true : false
             }
-        });
 
-        let newProduct = {
-            ...req.body, 
-            id: lastId + 1,
-            image: req.file ? req.file.filename : "default-image.png",
-            stock: req.body.stock ? true : false
+            getProducts.push(newProduct);
+
+            writeProducts(getProducts);
+
+            res.redirect('/admin/productos');
+        } else {
+            res.render("admin/products/addProduct", {
+                errors: errors.mapped(),
+                old: req.body
+            });
         }
 
-        getProducts.push(newProduct);
 
-        writeProducts(getProducts);
-
-        res.redirect('/admin/productos');
+        
     
         },
 

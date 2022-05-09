@@ -1,6 +1,6 @@
 module.exports ={
 
-    formulario: (req, res) => {   
+    register: (req, res) => {   
         res.render('users/registro')
 
     },

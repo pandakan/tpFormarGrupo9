@@ -6,30 +6,43 @@
   
     <div class="addProduct">
         <legend>AGREGAR PRODUCTO</legend>
-        <form action="/admin/productos" method="POST">
+        <form action="/admin/productos" method="POST" enctype="multipart/form-data">
             <div>
               <label for="name">Nombre del producto</label>
-              <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella">
+              <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella" value="<%= (locals.old && old.name) ? old.name : "" %>">
+              <% if (locals.errors && errors.name) { %>
+                <small><%= errors.name.msg%></small>
+              <% } %>
             </div>
             <div>
               <label for="price">Precio del producto</label>
-              <input type="number" name="price" id="price" placeholder="Ej: 1000">
+              <input type="number" name="price" id="price" placeholder="Ej: 1000" value="<%= (locals.old && old.price) ? old.price : "" %>">
+              <% if (locals.errors && errors.price) { %>
+                <small><%= errors.price.msg%></small>
+              <% } %>
             </div>
             <div>
               <label for="category">Categorias</label>
               <select name="categoryId">
-                <option selected hidden>Categoría</option>
-                <option value="1">Comun</option>
-                <option value="2">Vegetariana</option>
-              </select>            
+                <option selected hidden value="">Categoría</option>
+                <option value="1" <%= (locals.old && old.categoryId) && old.categoryId === "1" ? "selected" : "" %>>Comun</option>
+                <option value="2" <%= (locals.old && old.categoryId) && old.categoryId === "2" ? "selected" : "" %>>Vegetariana</option>
+              </select>
+              <% if (locals.errors && errors.categoryId) { %>
+                <small><%= errors.categoryId.msg%></small>
+              <% } %>            
+            </div>
+            <div>
+              <label for="inputFile">Imagen</label>
+              <input type="file" id="inputFile" name="image"/>
             </div>
             <div id="stock">
-              <input name="stock" type="checkbox" role="switch" id="stock">
+              <input name="stock" type="checkbox" role="switch" id="stock" <%= (locals.old && old.stock) ? "checked" : "" %>>
               <label for="stock">Stock disponible</label>
             </div>
             <div>
               <label for="description">Descripción</label>
-              <textarea name="description" id="description" rows="4"></textarea>
+              <textarea name="description" id="description" rows="4"><%= (locals.old && old.description) ? old.description : "" %></textarea>
             </div>
             <div>
               <button type="submit">Crear</button>

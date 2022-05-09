@@ -42,6 +42,15 @@ div.addProduct div select{
     background-color: white;
 }
 
+div.addProduct form div input#inputFile{
+    padding: 7px;
+}
+
+div.addProduct form div small {
+    color: red;
+    margin-top: 10px;
+}
+
 div.addProduct div#stock{
     display: flex;
     flex-direction: row;

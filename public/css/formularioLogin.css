@@ -74,6 +74,7 @@ div.container section.formularioLogin form span a{
         width: 80vw;
         height: 50vh;
         max-width: 500px;
+        min-height: 360px;
     }
 
     div.container section.formularioLogin form {

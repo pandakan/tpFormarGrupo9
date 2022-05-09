@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 /* Enrutadores */
 const indexRouter = require('./routes/indexRoutes');
 const productosRouter = require ('./routes/productosRoutes');
-const formularioRouter = require ('./routes/formularioRoutes');
+const formularioRouter = require ('./routes/usersRoutes');
 const adminRouter = require("./routes/adminRoutes");
 
 app.use(express.static(path.join(__dirname, "../public")));
