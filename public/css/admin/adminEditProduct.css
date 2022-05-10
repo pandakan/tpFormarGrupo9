@@ -2,6 +2,11 @@ div.listaProductosAdmin {
     height: auto;
 }
 
+div.listaProductosAdmin h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
 div.listaProductosAdmin table {
     width: 75%;
     margin: 30px auto;

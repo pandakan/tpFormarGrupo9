@@ -1,6 +1,11 @@
 const { getProducts, writeProducts } = require('../../data');
 const { validationResult } = require("express-validator");
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const removeAccents = (str) => {
+	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
 module.exports = {
     list: (req, res) => {
@@ -101,4 +106,20 @@ module.exports = {
 
         res.redirect('/admin/productos')
     },
+    search: (req, res) => {
+        let searchResult = [];
+        getProducts.forEach(product => {
+            if(removeAccents(product.name.toLowerCase()).includes(req.query.keywords.toLowerCase())){
+				searchResult.push(product);
+			}
+        });
+
+        
+
+        res.render("admin/products/resultsSearch",{
+            searchResult,
+            keyword: req.query.keywords,
+            toThousand,
+        })
+    }
 }

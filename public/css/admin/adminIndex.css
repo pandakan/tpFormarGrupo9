@@ -3,7 +3,7 @@
 header.admin{
     background-color: var(--negro);
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 header.admin div.adminHeader img#logo {
@@ -16,8 +16,6 @@ header.admin div.adminHeader{
     align-items: center;
     justify-content: space-between;
 }
-
-
 
 header.admin nav{
     margin-top: 35px;
@@ -48,6 +46,36 @@ header.admin nav ul#menu>li:hover>ul {
     display:block;
 }
 
+header.admin form {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+    margin-top: 35px;
+    position: relative;
+}
+
+header.admin form input {
+    height: 30px;
+    padding-left: 10px;
+}
+
+header.admin form input:focus{
+    outline: none;
+}
+
+header.admin form button {
+    height: 25px;
+    position: absolute;
+    margin-left: 150px;
+    border-color: white;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
 main.adminMain {
     margin-top: 30px;
     min-height: 100vh;    
@@ -67,5 +95,5 @@ footer.adminFooter {
 @media screen and (min-width: 768px){
     header.admin div.adminHeader img#logo {
         width: 100px;
-      }
+    }
 }

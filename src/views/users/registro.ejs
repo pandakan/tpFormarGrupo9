@@ -1,84 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include("../partials/head")  %> 
+<%- include("../partials/head") %>
 
-<body>
-    <div class="container">
-        <header class="user">
-            <nav class="main-nav">
-                <div class="header_menuButton">
-                    <button id="hamburguer_desplegable">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-            <img id="logo" src="/images/logofinal.svg" alt="logotipo" />
-            <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-            <nav class="main-nav-menu">
-                <div class="header_menuClose">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-                <ul class="header_menu">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/#menu">Menú</a></li>
-                    <li><a href="/#nosotros">Nosotros</a></li>
-                    <li><a href="/#reservaTuMesa">Reservas</a></li>
-                </ul>
-            </nav>
-        </header>
-        <a href="#" class="a_boton"><button class="boton">Reserva Ya!</button></a>
+    <body>
+        <div class="container">
+            <header class="user">
+                <nav class="main-nav">
+                    <div class="header_menuButton">
+                        <button id="hamburguer_desplegable">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </nav>
+                <img id="logo" src="/images/logofinal.svg" alt="logotipo" />
+                <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+                <nav class="main-nav-menu">
+                    <div class="header_menuClose">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <ul class="header_menu">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/#menu">Menú</a></li>
+                        <li><a href="/#nosotros">Nosotros</a></li>
+                        <li><a href="/#reservaTuMesa">Reservas</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <a href="#" class="a_boton"><button class="boton">Reserva Ya!</button></a>
 
-        <main class="forms-container">
-            <h2>Formulario de Registro</h2>
-            <hr />
+            <main class="forms-container">
+                <h2>Formulario de Registro</h2>
+                <hr />
 
-            <form class="form-register" action="data.html" method="post">
-                <!-- <div class="input-container">
-      <input type="text" class="input-style" name="nombre"  placeholder="Nombre y Apellido"/>
-      <span class="error-message">Debe ingresar su Nombre y Apellido</span>
-    </div>-->
+                <form class="form-register" action="/users/registro" method="post" enctype="multipart/form-data">
+                    <div class="input-container">
+                        <input type="text" class="input-style" name="usuario" placeholder="Nombre de Usuario" />
+                        <span class="error-message">Debe ingresar su Nombre de Usuario</span>
+                    </div>
 
-                <div class="input-container">
-                    <input type="text" class="input-style" name="Usuario" placeholder="Nombre de Usuario" />
-                    <span class="error-message">Debe ingresar su Nombre de Usuario</span>
-                </div>
+                    <div class="input-container">
+                        <input type="mail" class="input-style" name="mail" placeholder="Ingrese su Mail" />
+                        <span class="error-message">Debe ingresar su Mail</span>
+                    </div>
 
-                <div class="input-container">
-                    <input type="mail" class="input-style" name="Mail" placeholder="Ingrese su Mail" />
-                    <span class="error-message">Debe ingresar su Mail</span>
-                </div>
+                    <div class="input-container">
+                        <input type="password" class="input-style" name="clave" placeholder="Ingrese su clave" />
+                        <span class="error-message">Debe ingresar su contraseña</span>
+                    </div>
 
-                <div class="input-container">
-                    <input type="password" class="input-style" name="Clave" placeholder="Ingrese su clave" />
-                    <span class="error-message">Debe ingresar su contraseña</span>
-                </div>
+                    <div class="input-container">
+                        <input type="password" class="input-style" name="clave2" placeholder="Confirme su contraseña" />
+                        <span class="error-message">Confirme su contraseña</span>
+                    </div>
 
-                <div class="input-container">
-                    <input type="password" class="input-style" name="Clave2" placeholder="Confirme su contraseña" />
-                    <span class="error-message">Confirme su contraseña</span>
-                </div>
+                    <div class="input_check-container">
+                        <label for="activo">Aceptos los <a href="http://">Terminos y condiciones</a></label>
+                        <input type="checkbox" class="checkbox-input" name="check" id="activo">
+                        <span class="error-mesagge">Debe aceptar los terminos</span>
+                    </div>
+                    <div>
+                        <span class="btn-container">
+                            <button class="btn" type="submit">Crear Cuenta</button></span>
+                    </div>
+                </form>
+            </main>
 
-                <!--<div class="input-container">
-        <input type="tel" class="input-style" name="tel"  placeholder="Ingrese su telefono"/>
-        <span class="error-message">Debe ingresar su telefono</span>
-    </div>-->
-
-        <div class="input_check-container">
-            <label for="activo">Aceptos los <a href="http://">Terminos y condiciones</a></label>
-            <input type="checkbox" class="checkbox-input" name="clave2" id="activo">
-            <span class="error-mesagge">Debe aceptar los terminos</span>
+            <%- include("../partials/footer") %>
         </div>
-
-                <span class="btn-container">
-                    <button class="btn" type="reset">Limpiar</button>
-                    <button class="btn" type="submit">Crear Cuenta</button></span>
-            </form>
-        </main>
-
-        <%- include("../partials/footer")  %> 
-    </div>
-    <script src="/js/header.js"></script>
-</body>
+        <script src="/js/header.js"></script>
+    </body>
 
 </html>

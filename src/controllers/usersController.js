@@ -1,14 +1,21 @@
-module.exports ={
+const req = require("express/lib/request")
 
-    register: (req, res) => {   
-        res.render('users/registro')
+module.exports = {
 
-    },
-    login: (req, res) => {   
+    login: (req, res) => {
         res.render('users/login')
+    },
+    processLogin: (req, res) => {
+        res.send("Estamos ingresando")
+    },
+
+    register: (req, res) => {
+        res.render('users/registro')
+    },
+    processRegister: (req, res) => {
+        res.send("Estamos registrandote")
     }
-     
-    }
-     
+}
+
 
 

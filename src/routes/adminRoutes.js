@@ -22,4 +22,6 @@ router.put('/productos/:id', adminProductsController.productUpdate);
 
 router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
+router.get("/productos/search", adminProductsController.search);
+
 module.exports = router;

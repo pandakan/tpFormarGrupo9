@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 /* Enrutadores */
 const indexRouter = require('./routes/indexRoutes');
 const productosRouter = require ('./routes/productosRoutes');
-const formularioRouter = require ('./routes/usersRoutes');
+const usersRouter = require ('./routes/usersRoutes');
 const adminRouter = require("./routes/adminRoutes");
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -23,7 +23,7 @@ app.set("views", path.join(__dirname, "views"))
 
 /* Rutas */
 app.use('/', indexRouter);   
-app.use('/formulario', formularioRouter);
+app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
 app.use("/admin", adminRouter);
 
