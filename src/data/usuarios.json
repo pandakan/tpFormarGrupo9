@@ -1,71 +1,67 @@
 [
-    {
+  { "id": 0, "name": "", "email": "", "password": "", "avatar": "", "rol": "" },
+  {
     "id": 1,
-    "first_name": "Gard",
-    "last_name": "Seward",
-    "email": "gseward0@shutterfly.com",
-    "password": "BbloR8lcZJN",
-    "category": "user",
-    "image": "usuario1.jpg"
-  }, 
-  
+    "name": "Brayan",
+    "email": "mail@mail.com",
+    "password": "12345678",
+    "avatar": "usuario1.jpg",
+    "rol": "user"
+  },
   {
     "id": 2,
-    "first_name": "Malchy",
-    "last_name": "Dunnion",
+    "name": "Malchy",
     "email": "mdunnion1@jalbum.net",
     "password": "Q7A3ttDjka",
-    "category": "user",
-    "image": "usuario2.jpg"
-  }, 
-  
+    "avatar": "usuario2.jpg",
+    "rol": "user"
+  },
   {
     "id": 3,
-    "first_name": "Bradly",
-    "last_name": "Ironside",
+    "name": "Bradly",
     "email": "bironside2@youku.com",
     "password": "vXcntG9",
-    "category": "user",
-    "image": "usuario3.jpg"
-  }, 
-  
+    "avatar": "usuario3.jpg",
+    "rol": "user"
+  },
   {
     "id": 4,
-    "first_name": "Mallory",
-    "last_name": "Bummfrey",
+    "name": "Mallory",
     "email": "mbummfrey3@nasa.gov",
     "password": "9cxRo6zfKd9",
-    "category": "user",
-    "image": "usuario4.jpg"
-  }, 
-  
+    "avatar": "usuario4.jpg",
+    "rol": "user"
+  },
   {
     "id": 5,
-    "first_name": "Lorilee",
-    "last_name": "Bausmann",
+    "name": "Lorilee",
     "email": "lbausmann4@4shared.com",
     "password": "047M8DP9l",
-    "category": "user",
-    "image": "usuario5.jpg"
-  }, 
-  
+    "avatar": "usuario5.jpg",
+    "rol": "user"
+  },
   {
     "id": 6,
     "first_name": "Gifford",
-    "last_name": "Ponten",
     "email": "gponten5@addthis.com",
     "password": "eqSyCM",
-    "category": "user",
-    "image": "usuario6.jpg"
-  }, 
-  
+    "avatar": "usuario6.jpg",
+    "rol": "user"
+  },
   {
     "id": 7,
     "first_name": "Keenan",
-    "last_name": "Bootherstone",
     "email": "kbootherstone6@list-manage.com",
     "password": "ZkP4y8QBuNKE",
-    "category": "user",
-    "image": "usuario7.jpg"
+    "avatar": "usuario7.jpg",
+    "rol": "user"
+  },
+  {
+    "id": 8,
+    "name": "Brayan",
+    "email": "brayan@mail.com",
+    "password": "$2a$10$4YeMV.W3AaB3EK0KL9Kg4O8OU27.AZ8e/Pl8VoKrFIrhwFHuskPKW",
+    "avatar": "img_1652409238670.jpg",
+    "rol": "user"
   }
 ]

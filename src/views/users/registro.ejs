@@ -31,33 +31,51 @@
 
             <main class="forms-container">
                 <h2>Formulario de Registro</h2>
-                <hr />
+                <hr/>
 
                 <form class="form-register" action="/users/registro" method="post" enctype="multipart/form-data">
                     <div class="input-container">
-                        <input type="text" class="input-style" name="usuario" placeholder="Nombre de Usuario" />
-                        <span class="error-message">Debe ingresar su Nombre de Usuario</span>
+                        <input type="text" class="input-style" name="name" placeholder="Nombre de Usuario" value="<%= (locals.old && old.name) ? old.name : "" %>"/>
+                        <% if (locals.errors && errors.name) { %>
+                            <span class="error-message"><%= errors.name.msg %></span>
+                        <% } %>
                     </div>
 
                     <div class="input-container">
-                        <input type="mail" class="input-style" name="mail" placeholder="Ingrese su Mail" />
-                        <span class="error-message">Debe ingresar su Mail</span>
+                        <input type="email" class="input-style" name="email" placeholder="Ingrese su Mail" value="<%= (locals.old && old.email) ? old.email : "" %>" />
+                        <% if (locals.errors && errors.email) { %>
+                            <span class="error-message"><%= errors.email.msg %></span>
+                        <% } %>
                     </div>
 
                     <div class="input-container">
-                        <input type="password" class="input-style" name="clave" placeholder="Ingrese su clave" />
-                        <span class="error-message">Debe ingresar su contraseña</span>
+                        <input type="password" class="input-style" name="password" placeholder="Ingrese su clave" />
+                        <% if (locals.errors && errors.password) { %>
+                            <span class="error-message"><%= errors.password.msg %></span>
+                        <% } %>
                     </div>
 
                     <div class="input-container">
-                        <input type="password" class="input-style" name="clave2" placeholder="Confirme su contraseña" />
-                        <span class="error-message">Confirme su contraseña</span>
+                        <input type="password" class="input-style" name="password2" placeholder="Confirme su contraseña" />
+                        <% if (locals.errors && errors.password2) { %>
+                            <span class="error-message"><%= errors.password2.msg %></span>
+                        <% } %>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="file" class="input-style" name="avatar" id="avatar" placeholder="Avatar">
                     </div>
 
                     <div class="input_check-container">
-                        <label for="activo">Aceptos los <a href="http://">Terminos y condiciones</a></label>
-                        <input type="checkbox" class="checkbox-input" name="check" id="activo">
-                        <span class="error-mesagge">Debe aceptar los terminos</span>
+                        <nav>
+                            <input name="check" type="checkbox" value="" id="activo">
+                            <label for="activo">
+                                Aceptos los Terminos y condiciones
+                            </label>
+                        </nav>
+                        <% if (locals.errors && errors.check) { %>
+                            <span class="error-message"><%= errors.check.msg %></span>
+                        <% } %>
                     </div>
                     <div>
                         <span class="btn-container">

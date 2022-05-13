@@ -37,7 +37,7 @@ main.forms-container {
 main form { 
     display: flex;
     flex-direction: column;
-    padding: 0.5em;
+    padding: 1em;
     justify-content: center;
     align-items: center;
     height: fit-content;
@@ -61,21 +61,35 @@ body form .input-container{
 }
 
 body form div.input_check-container {
-    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
+
 .checkbox-input{
     width: 15px;
 
 }
 
-body form span.error-message {
+body div.container main.forms-container form.form-register div.input_check-container nav{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+body div.container main.forms-container form.form-register div.input-container input#avatar.input-style{
+    padding-bottom: 30px;
+}
+
+body form span.error-message{
     color: red;
     font-size: 10px;
     text-align: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
 }
 
 body form input.input-style{
@@ -84,9 +98,9 @@ body form input.input-style{
     width: 250px;
     height: 2rem;
     padding: 0.5rem;
-    margin: 0.2rem;
     outline: none;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .btn-container{
