@@ -24,7 +24,8 @@ div.container section.formularioLogin form div {
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 30px;
+    flex-direction: column;
+    /*height: 30px;*/
     
 }
 
@@ -78,7 +79,7 @@ div.container section.formularioLogin form span a{
     }
 
     div.container section.formularioLogin form {
-        width: 80vw;
+        /*width: 80vw;*/
         height: 70vh;
         display: flex;
         flex-direction: column;

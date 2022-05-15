@@ -37,10 +37,19 @@
             <form action="/users/login" method="post">
                 <div>
                     <input type="email" name="email" placeholder="Correo Electrónico">
+                    <% if (locals.errors && errors.email) { %>
+                        <span class="error-message"><%= errors.email.msg %></span>
+                    <% } %>
                 </div>
                 <div>
-                    <input type="password" name="pass" placeholder="Contraseña">
+                    <input type="password" name="password" placeholder="Contraseña">
+                    <% if (locals.errors && errors.password) { %>
+                        <span class="error-message"><%= errors.password.msg %></span>
+                    <% } %>
                 </div>
+                <% if (locals.errors && errors.custom) { %>
+                    <span class="error-message"><%= errors.custom.msg %></span>
+                <% } %>
                 <div>
                     <button type="submit">Entrar</button>
                 </div>

@@ -2,7 +2,9 @@ const { getProducts } = require('../data');
 
 module.exports = {
     shopCart: (req, res) => {   
-        res.render('products/productCart')
+        res.render('products/productCart',{
+            session: req.session
+        })
     },
     details: (req,res) => {
         let productId = +req.params.id;
@@ -10,6 +12,7 @@ module.exports = {
         res.render("products/productDetail",{
             product,
             productos: getProducts,
+            session: req.session
         })
     }
 

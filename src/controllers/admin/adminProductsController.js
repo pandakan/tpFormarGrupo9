@@ -11,13 +11,15 @@ module.exports = {
     list: (req, res) => {
         res.render('admin/products/listProducts', {
             titulo: "Listado de productos",
-            productos: getProducts
+            productos: getProducts,
+            session: req.session
         })
     },
 
     productAdd: (req, res) => {
         res.render('admin/products/addProduct', {
-            titulo: "Agregar producto"
+            titulo: "Agregar producto",
+            session: req.session
         })
     },
 
@@ -47,13 +49,10 @@ module.exports = {
         } else {
             res.render("admin/products/addProduct", {
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             });
         }
-
-
-        
-    
         },
 
     productEdit: (req, res) => {
@@ -64,7 +63,8 @@ module.exports = {
 
         res.render('admin/products/editProduct', {
             titulo: "Edición",
-            producto
+            producto,
+            session: req.session
         })
     },
 
@@ -120,6 +120,7 @@ module.exports = {
             searchResult,
             keyword: req.query.keywords,
             toThousand,
+            session: req.session
         })
     }
 }

@@ -9,16 +9,26 @@ module.exports = {
         })
     },
     processLogin: (req, res) => {
-       let usuario = getUsers.find(user => user.email === req.body.email) 
-       req.session.usuarioactivado = {
-        id: usuario.id,
-        name: usuario.name,
-        email: usuario.email,
-        avatar: usuario.avatar,
-        rol: usuario.rol,
-       }
-       res.locals.users = req.session.usuarioactivado
-       res.redirect('/')
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let user = getUsers.find(user => user.email === req.body.email) 
+            
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+            res.locals.user = req.session.user
+
+            res.redirect('/')
+    } else {
+        res.render("users/login", {
+            errors: errors.mapped(),
+            session: req.session
+        })
+    }
     },
 
 
@@ -26,7 +36,6 @@ module.exports = {
     register: (req, res) => {
         res.render('users/registro', {
             session: req.session
-
         } )
 
     },
@@ -60,7 +69,6 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
-
             })
         }
     }

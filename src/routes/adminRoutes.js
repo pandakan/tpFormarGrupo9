@@ -5,8 +5,10 @@ const adminController = require('../controllers/admin/adminController');
 const adminProductsController = require('../controllers/admin/adminProductsController');
 const uploadImageFile = require("../middlewares/uploadProductImage")
 const productCreateValidator = require("../validations/productCreateValidator");
+const userSessionCheck = require("../middlewares/userSessionCheck");
+const adminCheck = require("../middlewares/adminCheck");
 
-router.get('/', adminController.index);  
+router.get('/', userSessionCheck, adminCheck, adminController.index);  
 
 /* CRUD Productos */
 

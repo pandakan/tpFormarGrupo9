@@ -63,5 +63,20 @@
     "password": "$2a$10$4YeMV.W3AaB3EK0KL9Kg4O8OU27.AZ8e/Pl8VoKrFIrhwFHuskPKW",
     "avatar": "img_1652409238670.jpg",
     "rol": "user"
+  },
+  {
+    "id": 9,
+    "name": "user",
+    "email": "user@mail.com",
+    "password": "$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu",
+    "avatar": "img_1652641843292.jpg",
+    "rol": "user"
+  },{
+    "id": 9,
+    "name": "admin",
+    "email": "admin@mail.com",
+    "password": "$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu",
+    "avatar": "img_1652641843292.jpg",
+    "rol": "admin"
   }
 ]
