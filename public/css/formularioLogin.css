@@ -65,6 +65,12 @@ div.container section.formularioLogin form span a{
     margin-left: 5px;
 }
 
+div.container section.formularioLogin form div#remember {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 @media screen and (min-width: 768px){ 
     div.container section.formularioLogin h2{
         padding-top: 30px;
@@ -97,6 +103,11 @@ div.container section.formularioLogin form span a{
         width: 50vw;
         max-width: 400px;
         font-size: 20px;
+    }
+
+    div.container section.formularioLogin form div#remember input{
+        height: initial;
+        width: initial;
     }
 
     

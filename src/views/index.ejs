@@ -5,36 +5,9 @@
 
 <body>
     <div class="container">
-        <header class="user">
-            <nav class="main-nav">
-                <div class="header_menuButton">
-                    <button id="hamburguer_desplegable">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-            <img id="logo" src="/images/logofinal.svg" alt="logotipo">
-            <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-            <nav class="main-nav-menu">
-                <div class="header_menuClose">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-                <ul class="header_menu">
-                    <% if (typeof session.user != "undefined") { %>
-                        <li><h2 style="color: white;">Bienvenido <%=session.user.name%></h2></li>
-                    <% } %>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/#menu">Menú</a></li>
-                    <li><a href="/#nosotros">Nosotros</a></li>
-                    <li><a href="/#reservaTuMesa">Reservas</a></li>
-                </ul>
-                <ul class="header_menu" id="menu2">
-                    <li><a href="/users/login">Acceder</a></li>
-                    <li><a href="/users/registro">Registrarse</a></li>
-                </ul>
-            </nav>
 
-        </header>
+        <%- include("partials/header") -%> 
+
         <img id="fondo" src="/images/Banner.jpg" alt="">
         <a href="#" class="a_boton"><button class="boton">Reserva ya!</button></a>
 

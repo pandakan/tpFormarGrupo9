@@ -3,34 +3,9 @@
     <%- include("../partials/head")  %> 
 <body>
     <div class="container">
-        <header class="user">
-            <nav class="main-nav">
-                <div class="header_menuButton">
-                    <button id="hamburguer_desplegable">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-            <img id="logo" src="/images/logofinal.svg" alt="logotipo">
-            <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-            <nav class="main-nav-menu">
-                <div class="header_menuClose">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-                <ul class="header_menu">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/#menu">Menú</a></li>
-                    <li><a href="/#nosotros">Nosotros</a></li>
-                    <li><a href="/#reservaTuMesa">Reservas</a></li>
-                </ul>
-                <ul class="header_menu" id="menu2">
-                    <li><a href="/formulario/login">Acceder</a></li>
-                    <li><a href="/formulario/registro">Registrarse</a></li>
-                </ul>
-            </nav>
 
-        </header>
-        
+        <%- include("../partials/header") -%> 
+
         <div class="cuerpoCarrito">
             <h1>Carrito de Compras</h1>
             <div class="infoDeProductosCarrito">

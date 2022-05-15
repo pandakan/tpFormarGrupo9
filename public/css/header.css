@@ -83,6 +83,17 @@ header.user nav.main-nav-menu ul.header_menu {
     padding: 0;
 }
 
+header.user nav.main-nav-menu ul.header_menu li#welcome {
+    cursor: initial;
+    transition: initial;
+    color: var(--naranja-Fuerte);
+}
+
+header.user nav.main-nav-menu ul.header_menu li#welcome:hover{
+    background-color: initial;
+}
+
+
 header.user nav.main-nav-menu ul.header_menu li {
     width: auto;
     text-align: center;

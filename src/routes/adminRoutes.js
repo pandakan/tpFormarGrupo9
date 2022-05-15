@@ -12,18 +12,18 @@ router.get('/', userSessionCheck, adminCheck, adminController.index);
 
 /* CRUD Productos */
 
-router.get("/productos", adminProductsController.list);
+router.get("/productos", userSessionCheck, adminCheck, adminProductsController.list);
 
-router.get("/productos/agregar", adminProductsController.productAdd);
+router.get("/productos/agregar", userSessionCheck, adminCheck, adminProductsController.productAdd);
 
 router.post("/productos", uploadImageFile.single("image"), productCreateValidator ,adminProductsController.productCreate)
 
-router.get("/productos/editar/:id", adminProductsController.productEdit);
+router.get("/productos/editar/:id", userSessionCheck, adminCheck, adminProductsController.productEdit);
 
 router.put('/productos/:id', adminProductsController.productUpdate);
 
 router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
-router.get("/productos/search", adminProductsController.search);
+router.get("/productos/search", userSessionCheck, adminCheck, adminProductsController.search);
 
 module.exports = router;

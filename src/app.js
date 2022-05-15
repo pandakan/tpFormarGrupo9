@@ -6,6 +6,8 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 const methodOverride = require("method-override");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const cookieSession = require("./middlewares/cookieSession");
 
 /* Enrutadores */
 const indexRouter = require('./routes/indexRoutes');
@@ -23,8 +25,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie:{}
-}))
+}));
 
+app.use(cookieParser());
+app.use(cookieSession);
 
 /* Views config */
 app.set("view engine", "ejs")
