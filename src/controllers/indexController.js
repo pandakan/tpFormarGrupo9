@@ -4,6 +4,7 @@ module.exports ={
     index: (req, res) => {   
         res.render('index',{
             productos: getProducts,
+            session: req.session
         })
     }
 }

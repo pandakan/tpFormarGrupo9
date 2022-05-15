@@ -20,6 +20,10 @@
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
                 <ul class="header_menu">
+                    <% if (typeof session.usuarioactivado != "undefined") { %>
+                        <h2 style="color: white;">Bienvenido <%=session.usuarioactivado.name%></h2>
+                    <% } %>
+                    
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/#menu">Menú</a></li>
                     <li><a href="/#nosotros">Nosotros</a></li>
