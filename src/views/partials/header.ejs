@@ -6,6 +6,9 @@
             </button>
         </div>
     </nav>
+    <form action="/search" method="get" class="search2"> 
+        <input type="text" name="Busqueda" placeholder="Elegi tu pizza!!!">
+     </form>
     <img id="logo" src="/images/logofinal.svg" alt="logotipo">
     <% if (typeof session.user != "undefined") { %>
         <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -23,6 +26,9 @@
             <li><a href="/#menu">Menú</a></li>
             <li><a href="/#nosotros">Nosotros</a></li>
             <li><a href="/#reservaTuMesa">Reservas</a></li>
+            <form action="/search" method="get" class="search1"> 
+                <input type="text" name="Busqueda" placeholder="Elegi tu pizza!!!">
+             </form>
             <% if (typeof session.user != "undefined") { %>
                 <% if (session.user.rol === "admin") { %>
                     <li><a href="/admin">Admin</a></li>

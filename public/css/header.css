@@ -127,6 +127,14 @@ a.a_boton button.boton{
     margin-top: 30px;
 }
 
+.search1 {
+    display: none;
+}
+
+.search2 {
+    display: block;
+}
+
 /* Animacion */
 
 @keyframes menuFadeIn {
@@ -206,6 +214,14 @@ div.container img#fondo {
     header.user nav.main-nav {
         display: flex;
         flex-wrap: nowrap;
+    }
+
+    .search1 {
+        display: block;
+    }
+
+    .search2 {
+        display: none;
     }
 
     header.user nav.main-nav-menu {

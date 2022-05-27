@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("partials/head") -%> 
+
+<body>
+<div class="container">
+
+    <%- include("partials/header") -%> 
+
+
+
+    <!-- Seccion Detalle de Producto -->
+    <section class="detalleDeProducto">
+        <% if (buscador.length>0)  { %>
+         <% buscador.forEach(producto => { %>
+            <img src="/images/products/<%= producto.image  %> " alt="">
+            <div>
+                <h2><%= producto.name %> </h2>
+                <h2><%= producto.price  %> </h2>
+                <nav>
+                    <a href="#"><button>Agregar</button></a>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </nav>
+                <p><%= producto.description  %> </p>
+            </div>
+         <% }) %>
+       
+        <% } else { %>
+            <h2>No se encontro ningun resultado</h2>
+            <% } %>
+    </section>
+
+    <!-- Section Menu -->
+
+    <h2 class="header_masProductos">Ver mas productos</h2>
+
+   
+
+    <%- include("partials/footer") -%> 
+</div>
+    <script src="/js/header.js"></script>
+</body>
+
+</html>

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/pandakan/tpFormarGrupo9#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parse": "^0.4.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.7",
