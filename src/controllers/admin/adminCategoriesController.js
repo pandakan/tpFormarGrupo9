@@ -1,17 +1,28 @@
-const { getCategories, writeCategories } = require('../../data');
+//const { getCategories, writeCategories } = require('../../data');
 const { validationResult } = require("express-validator");
-
+const db = require("../../database/models");
 const removeAccents = (str) => {
 	return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 module.exports = {
     list: (req, res) => {
-        res.render('admin/categories/listCategories', {
+
+        db.Category.findAll()
+        .then(categorias => {
+            res.render('admin/categories/listCategories', {
+                titulo: "Listado de productos",
+                categorias,
+                session: req.session
+            });
+        })
+        .catch(error => res.send(error));
+
+        /*res.render('admin/categories/listCategories', {
             titulo: "Listado de productos",
             categorias: getCategories,
             session: req.session
-        })
+        })*/
     },
 
     categorieAdd: (req, res) => {
@@ -25,7 +36,14 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let lastId = 0;
+
+            db.Category.create({
+                name: req.body.name,
+            })
+            .then(() => { res.redirect('/admin/categorias')} )
+            .catch(error => res.send(error));
+
+            /*let lastId = 0;
             getCategories.forEach(category => {
                 if(category.id > lastId){
                     lastId = category.id;
@@ -41,7 +59,7 @@ module.exports = {
 
             writeCategories(getCategories);
 
-            res.redirect('/admin/categorias');
+            res.redirect('/admin/categorias');*/
         } else {
             res.render("admin/categories/addCategory", {
                 errors: errors.mapped(),
@@ -52,8 +70,21 @@ module.exports = {
         },
 
     categorieEdit: (req, res) => {
-
+        
         let idCategory = +req.params.id;
+
+        db.Category.findByPk(idCategory)
+        .then(categoria => {
+            res.render('admin/categories/editCategory', {
+                titulo: "Edición",
+                categoria  ,
+                session: req.session
+            })
+        })
+        .catch(error => res.send(error));
+
+
+        /*let idCategory = +req.params.id;
 
         let category = getCategories.find(category => category.id === idCategory)
 
@@ -61,12 +92,30 @@ module.exports = {
             titulo: "Edición",
             categoria: category,
             session: req.session
-        })
+        })*/
     },
 
     categorieUpdate: (req, res) => {
 
-        let idCategory = +req.params.id;
+        let categoryId = +req.params.id;
+
+        db.Category.update({
+            name: req.body.name,
+        },{
+            where: {
+                id: categoryId,
+            }
+        })
+        .then(result => {
+            if(result){
+                res.redirect('/admin/categorias');
+            }else{
+                res.send("No se pudo actualizar");
+            }
+        })
+        .catch(error => res.send(error));
+
+        /*let idCategory = +req.params.id;
 
         getCategories.forEach(category => {
             if(category.id === idCategory){
@@ -76,12 +125,28 @@ module.exports = {
 
         writeCategories(getCategories);
 
-        res.redirect('/admin/categorias');
+        res.redirect('/admin/categorias');*/
     },
 
     categorieDelete: (req, res) => {
 
         let idCategory = +req.params.id;
+
+        db.Category.destroy({
+            where: {
+                id: idCategory,
+            }
+        })
+        .then(result => {
+            if(result){
+                res.redirect('/admin/categorias');
+            }else{
+                res.send("No se pudo eliminar");
+            }
+        })
+        .catch(error => res.send(error));
+
+        /*let idCategory = +req.params.id;
 
         getCategories.forEach(category => {
             if(category.id === idCategory){
@@ -94,7 +159,7 @@ module.exports = {
 
         writeCategories(getCategories);
 
-        res.redirect('/admin/categorias');
+        res.redirect('/admin/categorias');*/
     },
     /*search: (req, res) => {
         let searchResult = [];
