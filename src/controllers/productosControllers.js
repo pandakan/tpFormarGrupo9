@@ -1,6 +1,6 @@
+const { promiseImpl } = require('ejs');
 const { getProducts } = require('../data'); 
 const db = require('../database/models');
-const { promiseImpl} = require('ejs');
 
 module.exports = {
     shopCart: (req, res) => {   
@@ -12,21 +12,26 @@ module.exports = {
 
         let productId = +req.params.id;
 
-        const productPromise = db.Product.findByPk(productId);
-        const imagesPromise = db.ProductImage.findAll({
-            where: {
-                product_id: productId
-            }
+        const allProductsPromise = db.Product.findAll({
+            include: [{ association: 'productImages' }],
         })
-        promiseImpl.all([productPromise, imagesPromise])
-            .then(([productPromise, imagesPromise]) => {
-                res.render("products/productDetail",{
-                    product: productPromise,
-                    image: imagesPromise,
-                    session: req.session
-                })
+        const oneProductPromise = db.Product.findOne({
+            where: {
+                id: productId
+            },
+            include: [{ association: "productImages" }]
+        })
+        promiseImpl.all([allProductsPromise, oneProductPromise])
+        .then(([allProductsPromise, oneProductPromise]) => {
+            //res.send(oneProductPromise);
+            res.render("products/productDetail", {
+                
+                product: oneProductPromise,
+                productos: allProductsPromise,
+                session: req.session
             })
-            .catch(error => res.send(error));
+        })
+        .catch(error => res.send(error));
         
 
         /*let productId = +req.params.id;
