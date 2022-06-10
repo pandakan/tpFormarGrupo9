@@ -38,7 +38,7 @@ module.exports ={
         .then(productos => {
             res.render('search', {
                 productos, 
-                busqueda: req.query.busqueda,
+                busqueda: req.query.Busqueda,
                 session: req.session
             })
         })
