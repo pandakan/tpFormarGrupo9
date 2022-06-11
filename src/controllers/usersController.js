@@ -25,7 +25,7 @@ module.exports = {
                     name: user.name,
                     email: user.email,
                     avatar: user.avatar,
-                    rol: user.rol
+                    rol: user.rol_id
                 }
 
                 if (req.body.remember) {

@@ -30,7 +30,7 @@
                 <input type="text" name="Busqueda" placeholder="Elegi tu pizza!!!">
              </form>
             <% if (typeof session.user != "undefined") { %>
-                <% if (session.user.rol === "admin") { %>
+                <% if (session.user.rol === 1) { %>
                     <li><a href="/admin">Admin</a></li>
                 <% } %>
             <% } %> 
