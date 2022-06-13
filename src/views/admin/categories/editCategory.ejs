@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+    <body>
+        <%- include('../partials/header') %>
+            <div class="addProduct">
+                <legend>Editar Categoria: <%= categoria.name %>
+                </legend>
+                <form action="/admin/categorias/<%= categoria.id %>?_method=PUT" method="POST">
+                    <div>
+                        <label for="name">Nombre de la Categoria</label>
+                        <input type="text" name="name" id="name" placeholder="Ej: Vegetariana"
+                            value="<%= categoria.name  %>">
+                    </div>
+                    <div>
+                        <button type="submit">Editar</button>
+                    </div>
+                </form>
+            </div>
+            <%- include('../partials/footer') %>
+    </body>
+</html>

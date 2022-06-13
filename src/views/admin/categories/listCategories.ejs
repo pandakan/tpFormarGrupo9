@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("../partials/head") %>
+
     <body>
         <%- include('../partials/header') %>
+
             <div class="listaProductosAdmin">
-                <h2>Resultados de la búsqueda: <%= searchResult %></h2>
                 <table>
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% searchResult.forEach(producto=> { %>
+                        <% categorias.forEach(categoria=> { %>
                             <tr>
                                 <th>
-                                    <%- producto.id %>
+                                    <%- categoria.id %>
                                 </th>
                                 <td>
-                                    <%- producto.name %>
-                                </td>
-                                <td>
-                                    <%- producto.price %>
-                                </td>
-                                <td>
-                                    <%- producto.categoryId %>
-                                </td>
-                                <td>
-                                    <%- producto.stock %>
+                                    <%- categoria.name %>
                                 </td>
                                 <td>
                                     <div>
-                                        <a href="/admin/productos/editar/<%- producto.id %>">
+                                        <a href="/admin/categorias/editar/<%- categoria.id %>">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
                                     </div>
-                                    <form action="/admin/productos/eliminar/<%- producto.id %>?_method=DELETE"
+                                    <form action="/admin/categorias/eliminar/<%- categoria.id %>?_method=DELETE"
                                         method="post">
                                         <button type="submit">
                                             <i class="fa-solid fa-trash-can"></i>
