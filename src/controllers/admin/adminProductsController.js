@@ -1,4 +1,5 @@
-const { getProducts, writeProducts } = require('../../data');
+const db = require("../../database/models")
+const {Op} = db.Sequelize
 const { validationResult } = require("express-validator");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -9,17 +10,21 @@ const removeAccents = (str) => {
 
 module.exports = {
     list: (req, res) => {
-        res.render('admin/products/listProducts', {
-            titulo: "Listado de productos",
-            productos: getProducts,
-            session: req.session
+        db.Product.findAll()
+        .then((product) => {
+            res.render("admin/products/listProducts",{
+                titulo: "Listado de productos",
+                product,
+                session:req.session
+            })
         })
+        .catch((error) => { res.send(error)})
     },
 
     productAdd: (req, res) => {
-        res.render('admin/products/addProduct', {
-            titulo: "Agregar producto",
-            session: req.session
+        res.render("admin/products/addProduct",{
+            titulo: "Producto nuevo",
+            session:req.session
         })
     },
 
@@ -27,100 +32,101 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let lastId = 0;
-            getProducts.forEach(product => {
-                if(product.id > lastId){
-                    lastId = product.id;
-                }
-            });
-
-            let newProduct = {
-                ...req.body, 
-                id: lastId + 1,
+            db.Product.create({
+                ...req.body,
                 image: req.file ? req.file.filename : "default-image.png",
                 stock: req.body.stock ? true : false
-            }
-
-            getProducts.push(newProduct);
-
-            writeProducts(getProducts);
-
-            res.redirect('/admin/productos');
-        } else {
-            res.render("admin/products/addProduct", {
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
-            });
+            })
+            .then ((product) =>{
+                res.redirect('/admin/productos')
+           })
+              .catch((error) => res.send(error));
         }
         },
 
-    productEdit: (req, res) => {
+    productEdit: (req, res) => { //product_id
 
         let idProducto = +req.params.id;
 
-        let producto = getProducts.find(producto => producto.id === idProducto)
-
-        res.render('admin/products/editProduct', {
-            titulo: "Edición",
-            producto,
-            session: req.session
-        })
+        db.Product.findByPk(idProducto)
+        .then((product) => { 
+            res.render('admin/products/editProduct', {
+                titulo: "Edición",
+                product,
+                session: req.session
+                })
+         })
+        .catch((error) => {
+            res.send(error)
+         })
     },
 
-    productUpdate: (req, res) => {
+    productUpdate: (req, res) => { 
 
         let idProducto = +req.params.id;
 
-        getProducts.forEach(producto => {
-            if(producto.id === idProducto){
-                producto.name = req.body.name
-                producto.price = req.body.price
-                producto.discount = req.body.discount
-                producto.categoryId = req.body.categoryId
-                producto.projectId = req.body.projectId
-                producto.stock = req.body.stock ? true : false
-                producto.description = req.body.description
+        db.Product.update({
+            name : req.body.name,
+            price : req.body.price,
+            discount : req.body.discount,
+            categoryId : req.body.categoryId,
+            projectId : req.body.projectId,
+            stock : req.body.stock ? true : false,
+            description : req.body.description
+        },{
+            where: {
+                id: idProducto
             }
         })
-
-        writeProducts(getProducts);
-
-        res.redirect('/admin/productos');
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/productos')
+            }else{
+                res.send("Hay un error")
+            }
+        })
+        .catch((error) => { res.send(error)})
     },
 
     productDelete: (req, res) => {
 
         let idProducto = +req.params.id;
 
-        getProducts.forEach(producto => {
-            if(producto.id === idProducto){
-
-                let productToDeleteIndex = getProducts.indexOf(producto);
-
-                getProducts.splice(productToDeleteIndex, 1)
+        db.Product.destroy({
+            where: {
+                id: idProducto
             }
         })
-
-        writeProducts(getProducts);
-
-        res.redirect('/admin/productos')
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/productos')
+            }else{
+                res.send("No se pudo eliminar")
+            }
+        })
+        .catch( error => res.send(error))
     },
     search: (req, res) => {
-        let searchResult = [];
-        getProducts.forEach(product => {
-            if(removeAccents(product.name.toLowerCase()).includes(req.query.keywords.toLowerCase())){
-				searchResult.push(product);
-			}
-        });
+        let searchResult = req.query.search;
+        let search = removeAccents(searchResult.toLowerCase())
 
-        
-
-        res.render("admin/products/resultsSearch",{
-            searchResult,
-            keyword: req.query.keywords,
-            toThousand,
-            session: req.session
+        db.Product.findAll({
+            where:{
+                name:{[Op.like]:`%${search}%`}
+            }
         })
+        .then(producto=>{
+
+            res.render("admin/products/resultsSearch",{
+               titulo: `resultados de ${searchResult}`,
+               producto,
+               searchResult,
+                toThousand,
+                session: req.session
+             })
+        })
+        .catch((error) => { res.send(error)})
     }
 }
+
+
