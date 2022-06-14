@@ -19,8 +19,11 @@
           <label for="category">Categorias</label>
           <select name="categoryId">
             <option selected hidden>Categoría</option>
-            <option value="1">Comun</option>
-            <option value="2">Vegetariana</option>
+            <% categorias.forEach(categoria => { %>
+              <option value="<%=categoria.id  %>"><%=categoria.name  %></option>
+            <% }) %> 
+            <!--<option value="1">Comun</option>-->
+            <!--<option value="2">Vegetariana</option>-->
           </select>            
         </div>
         <div id="stock">
