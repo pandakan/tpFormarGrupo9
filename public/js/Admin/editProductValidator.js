@@ -5,7 +5,7 @@ window.addEventListener("load", ()=>{
     $inputName = QS("#name"),
     $inputPrice = QS("#price"),
     $inputCategory = QS("#id_categoria"),
-    $inputFile = QS("#inputGroupFile01"),
+    $inputFile = QS("#inputFile"),
     $inputStock = QS("#stock"),
     $inputDescription = QS("#description")
 

@@ -13,6 +13,7 @@
           <% if (locals.errors && errors.name) { %>
             <small><%= errors.name.msg%></small>
           <% } %>
+          <small id="errorName" style="color: red;"></small>
         </div>
         <div>
           <label for="price">Precio del producto</label>
@@ -20,6 +21,7 @@
           <% if (locals.errors && errors.price) { %>
             <small><%= errors.price.msg%></small>
           <% } %>
+          <small id="errorPrice" style="color: red;"></small>
         </div>
         <div>
           <label for="category">Categorias</label>
@@ -34,6 +36,7 @@
           <% if (locals.errors && errors.categoryId) { %>
             <small><%= errors.categoryId.msg%></small>
           <% } %>             
+          <small id="errorId_categoria" style="color: red;"></small>
         </div>
         <div>
           <label>Imagen Actual</label>
@@ -42,22 +45,25 @@
         <div>
           <label for="inputFile">Cambiar Imagen</label>
           <input type="file" id="inputFile" name="image"/>
+          <small id="errorImage" style="color: red;"></small>
         </div>
         <div id="stock">
           <input <%= producto.stock ? "checked" : "" %>   name="stock" type="checkbox" role="switch" id="stock">
           <label for="stock">Stock disponible</label>
+          <small id="errorStock" style="color: red;"></small>
         </div>
         <div>
           <label for="description">Descripción</label>
           <textarea name="description" id="description" rows="4"><%= producto.description %></textarea>
+          <small id="errorDescription" style="color: red;"></small>
         </div>
         <div>
-          <button type="submit">Editar</button>
+          <button type="submit" id="submit">Editar</button>
         </div>
     </form>
 </div>
 
   <%- include('../partials/footer')  %> 
-    
+  <script src="/js/Admin/editProductValidator.js"></script>
 </body>
 </html>
