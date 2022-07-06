@@ -28,8 +28,6 @@
                 <% categorias.forEach(categoria => { %>
                   <option value="<%=categoria.id  %>" <%= (locals.old && old.categoryId) && old.categoryId === categoria.id ? "selected" : "" %>><%=categoria.name%></option>
                 <% }) %> 
-                <!-- <option value="1" <%= (locals.old && old.categoryId) && old.categoryId === "1" ? "selected" : "" %>>Comun</option>
-                <option value="2" <%= (locals.old && old.categoryId) && old.categoryId === "2" ? "selected" : "" %>>Vegetariana</option> -->
               </select>
               <% if (locals.errors && errors.categoryId) { %>
                 <small><%= errors.categoryId.msg%></small>

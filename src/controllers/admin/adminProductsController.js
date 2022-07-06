@@ -83,13 +83,19 @@ module.exports = {
 
         const allCategoriesPromise = db.Category.findAll()
         const oneProductPromise = db.Product.findByPk(idProducto)
-        promiseImpl.all([allCategoriesPromise, oneProductPromise])
-            .then(([allCategoriesPromise, oneProductPromise]) => {
+        const oneImagePromise = db.ProductImage.findOne({
+            where: {
+                product_id: idProducto
+            }
+        })
+        promiseImpl.all([allCategoriesPromise, oneProductPromise, oneImagePromise])
+            .then(([allCategoriesPromise, oneProductPromise, oneImagePromise]) => {
                 //res.send(oneProductPromise);
                 res.render('admin/products/editProduct', {
                     titulo: "Edición",
                     producto: oneProductPromise,
                     categorias: allCategoriesPromise,
+                    image: oneImagePromise,
                     session: req.session
                 })
             })
@@ -109,7 +115,87 @@ module.exports = {
 
     productUpdate: (req, res) => {
 
+        let errors = validationResult(req);
         let idProducto = +req.params.id;
+
+        if (errors.isEmpty()) {
+            db.Product.update({
+                ...req.body,
+                stock: req.body.stock ? 1 : 0
+            },{
+                where: {
+                    id: idProducto
+                }
+            })
+                .then(() => {
+                    if(req.file){
+                            db.ProductImage.findOne({
+                                where: {
+                                    product_id: idProducto,
+                                }
+                            })
+                                .then((image) => {
+                                    if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))){
+                                        fs.unlinkSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))
+                                    } else {
+                                        //console.log('No se encontró el archivo')
+                                        res.send('Error 1')
+                                    }
+
+                                    db.ProductImage.destroy({
+                                        where: {
+                                            product_id: req.params.id,
+                                        }
+                                    })
+                                        .then(() => {
+                                            db.ProductImage.create({
+                                                imageName: req.file.filename,
+                                                product_id: req.params.id
+                                            })
+                                                .then(() => {
+                                                    res.redirect('/admin/productos')
+                                                })
+                                                .catch((error) => /*console.log(error)*/res.send('error 2'))
+                                        })
+                                        .catch((error) => /*console.log(error)*/res.send('error 3'))
+                                })
+                                .catch((error) => /*console.log(error)*/res.send('error 4')) 
+                    } else {
+                        res.redirect('/admin/productos')
+                    }
+                })
+                .catch((error) => /*console.log(error)*/res.send('error 6'))
+
+
+        } else {
+            let idProducto = +req.params.id;
+
+            const allCategoriesPromise = db.Category.findAll()
+            const oneProductPromise = db.Product.findByPk(idProducto)
+            const oneImagePromise = db.ProductImage.findOne({
+            where: {
+                product_id: idProducto
+                }
+            })
+            promiseImpl.all([allCategoriesPromise, oneProductPromise, oneImagePromise])
+                .then(([allCategoriesPromise, oneProductPromise, oneImagePromise]) => {
+                    //res.send(oneProductPromise);
+                    res.render('admin/products/editProduct', {
+                        titulo: "Edición",
+                        producto: oneProductPromise,
+                        categorias: allCategoriesPromise,
+                        image: oneImagePromise,
+                        session: req.session,
+                        errors: errors.mapped(),
+                        old: req.body
+                    })
+                })
+                .catch(error => console.log(error));
+
+        }
+
+
+        /*let idProducto = +req.params.id;
 
         db.Product.update({
             name: req.body.name,
@@ -130,7 +216,7 @@ module.exports = {
                     res.send("Hay un error")
                 }
             })
-            .catch((error) => { res.send(error) })
+            .catch((error) => { res.send(error) })*/
     },
 
     productDelete: (req, res) => {

@@ -46,6 +46,10 @@ div.addProduct form div input#inputFile{
     padding: 7px;
 }
 
+div.addProduct form div img{
+    margin-top: 15px;
+}
+
 div.addProduct form div small {
     color: red;
     margin-top: 10px;
