@@ -6,7 +6,7 @@
   
     <div class="addProduct">
         <legend>AGREGAR PRODUCTO</legend>
-        <form action="/admin/productos" method="POST" enctype="multipart/form-data">
+        <form action="/admin/productos" method="POST" id="form" enctype="multipart/form-data">
             <div>
               <label for="name">Nombre del producto</label>
               <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella" value="<%= (locals.old && old.name) ? old.name : "" %>">
@@ -23,7 +23,7 @@
             </div>
             <div>
               <label for="category">Categorias</label>
-              <select name="categoryId">
+              <select id="id_categoria" name="categoryId">
                 <option selected hidden value="">Categoría</option>
                 <% categorias.forEach(categoria => { %>
                   <option value="<%=categoria.id  %>" <%= (locals.old && old.categoryId) && old.categoryId === categoria.id ? "selected" : "" %>><%=categoria.name%></option>
