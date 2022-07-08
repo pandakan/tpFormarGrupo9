@@ -14,55 +14,56 @@
                 <h2>Formulario de Registro</h2>
                 <hr/>
 
-                <form class="form-register" action="/users/registro" method="post" enctype="multipart/form-data">
+                <form class="form-register" action="/users/registro" id="form" method="post" enctype="multipart/form-data">
                     <div class="input-container">
                         <input type="text" class="input-style" id="name" name="name" placeholder="Nombre de Usuario" value="<%= (locals.old && old.name) ? old.name : "" %>"/>
                         <% if (locals.errors && errors.name) { %>
-                            <span class="error-message"><%= errors.name.msg %></span>
+                            <span class="error-message" id="errorBackName"><%= errors.name.msg %></span>
                         <% } %>
-                        <small id="errorName" style="color: red;"></small>
+                        <span id="errorName" style="color: red;"></span>
                     </div>
 
                     <div class="input-container">
                         <input type="email" class="input-style" id="email" name="email" placeholder="Ingrese su Mail" value="<%= (locals.old && old.email) ? old.email : "" %>" />
                         <% if (locals.errors && errors.email) { %>
-                            <span class="error-message"><%= errors.email.msg %></span>
+                            <span class="error-message" id="errorBackEmail"><%= errors.email.msg %></span>
                         <% } %>
-                        <small id="errorEmail" style="color: red;"></small>
+                        <span id="errorEmail" style="color: red;"></span>
                     </div>
 
                     <div class="input-container">
-                        <input type="password" class="input-style" id="passwd" name="password" placeholder="Ingrese su clave" />
+                        <input type="password" class="input-style" id="passwd" name="password" placeholder="Ingrese su contraseña" />
                         <% if (locals.errors && errors.password) { %>
-                            <span class="error-message"><%= errors.password.msg %></span>
+                            <span class="error-message" id="errorBackPasswd"><%= errors.password.msg %></span>
                         <% } %>
-                        <small id="errorPasswd" style="color: red;"></small>
+                        <span id="errorPasswd" style="color: red;"></span>
                     </div>
 
                     <div class="input-container">
-                        <input type="password" class="input-style" name="password2" placeholder="Confirme su contraseña" />
+                        <input type="password" class="input-style" id="passwd2" name="password2" placeholder="Confirme su contraseña" />
                         <% if (locals.errors && errors.password2) { %>
-                            <span class="error-message"><%= errors.password2.msg %></span>
-                        <% } %>
-                        
+                            <span class="error-message" id="errorBackPasswd2"><%= errors.password2.msg %></span>
+                        <% } %> 
+                        <span id="errorPasswd2" style="color: red;"></span>
                     </div>
 
                     <div class="input-container">
                         <input type="file" class="input-style" name="avatar" id="avatar" placeholder="Avatar">
-                        <small id="errorFile" style="color: red;"></small>
+                        <span id="errorFile" style="color: red; font-size: 13px;"></s>
                     </div>
 
                     <div class="input_check-container">
                         <nav>
-                            <input name="check" type="checkbox" value="" id="activo">
+                            <input name="check" type="checkbox" value="" id="terms">
                             <label for="activo">
                                 Aceptos los Terminos y condiciones
                             </label>
                         </nav>
                         <% if (locals.errors && errors.check) { %>
-                            <span class="error-message"><%= errors.check.msg %></span>
+                            <span  class="error-message" id="errorBackTerms"><%= errors.check.msg %></span>
                         <% } %>
-                        <small id="errorTC" style="color: red;"></small>
+                        <span id="errorTerms" style="color: red;"></span>
+                        <span id="errorSubmit" style="color: red;"></span>
                     </div>
                     <div>
                         <span class="btn-container">

@@ -36,6 +36,12 @@ div.container section.formularioLogin form div input {
     text-align: center;
 }
 
+div.container section.formularioLogin form div small {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
 div.container section.formularioLogin form div input::placeholder {
     text-align: center;
 }
@@ -60,6 +66,9 @@ div.container section.formularioLogin form span {
     display: flex;
     justify-content: center;
 }
+
+div form
+
 
 div.container section.formularioLogin form span a{
     margin-left: 5px;

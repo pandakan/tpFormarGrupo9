@@ -7,7 +7,7 @@ let validateRegister = [
         .notEmpty().withMessage("Debe ingresar un nombre").bail()
         .isLength({ min: 2}).withMessage("Ingrese un nombre válido"),
     check("email")
-        .notEmpty().withMessage("Debe poner un email").bail()
+        .notEmpty().withMessage("Debe ingresar un email").bail()
         .isEmail().withMessage("Ingrese un email válido"),
     body("email").custom((value)=>{
         return db.User.findOne({

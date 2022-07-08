@@ -14,24 +14,27 @@
 
         <section class="formularioLogin">
             <h2>Inicia Sesión</h2>
-            <form action="/users/login" method="post">
+            <form action="/users/login" id="form" method="post">
                 <div>
                     <input type="email" id="email" name="email" placeholder="Correo Electrónico">
                     <% if (locals.errors && errors.email) { %>
-                        <span class="error-message"><%= errors.email.msg %></span>
+                        <span class="error-message" id="errorBackEmail"><%= errors.email.msg %></span>
                     <% } %>
-                    <small id="errorEmail" style="color: red;"></small>
+                    <span id="errorEmail" style="color: red;"></span>
                 </div>
                 <div>
                     <input type="password" id="passwd" name="password" placeholder="Contraseña">
                     <% if (locals.errors && errors.password) { %>
-                        <span class="error-message"><%= errors.password.msg %></span>
+                        <span class="error-message" id="errorBackPasswd"><%= errors.password.msg %></span>
                     <% } %>
-                    <small id="errorPasswd" style="color: red;"></small>
+                    <span id="errorPasswd" style="color: red;"></span>
                 </div>
-                <% if (locals.errors && errors.custom) { %>
-                    <span class="error-message"><%= errors.custom.msg %></span>
-                <% } %>
+                <div>
+                    <% if (locals.errors && errors.custom) { %>
+                    <span class="error-message" id="errorComparacion" ><%= errors.custom.msg %></span>
+                    <% } %>
+                    <span id="errorSubmit" style="color: red;"></span>
+                </div>
                 <div id="remember">
                     <input name="remember" type="checkbox" id="remember">
                     <label for="remember">
