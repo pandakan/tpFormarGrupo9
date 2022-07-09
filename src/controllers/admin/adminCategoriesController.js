@@ -97,7 +97,10 @@ module.exports = {
 
     categorieUpdate: (req, res) => {
 
-        let categoryId = +req.params.id;
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            let categoryId = +req.params.id;
 
         db.Category.update({
             name: req.body.name,
@@ -114,6 +117,16 @@ module.exports = {
             }
         })
         .catch(error => res.send(error));
+        } else {
+            res.render("admin/categories/addCategory", {
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session
+            });
+        }
+
+
+        
 
         /*let idCategory = +req.params.id;
 

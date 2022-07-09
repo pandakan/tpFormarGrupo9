@@ -23,46 +23,91 @@ window.addEventListener("load", ()=>{
     $errorCategory = QS("#errorId_categoria"),
     $errorFile = QS("#errorImage"),
     $errorStock = QS("#errorStock"),
-    $errorDescription = QS("#errorDescription")
+    $errorDescription = QS("#errorDescription"),
+    $errorSubmit = QS("#errorSubmit")
+
+    let $errorBackName = QS("#errorBackName"),
+    $errorBackPrice = QS("#errorBackPrice"),
+    $errorBackCategory = QS("#errorBackIdCategoria")
+
+    let errors = {
+        name:true,
+        price:true,
+        category: true,
+    }
 
     $inputName.addEventListener("blur", e =>{
         switch(true){
             case !$inputName.value.trim():
-                $errorName.innerHTML = "Escriba el nombre del producto"
+                $errorName.innerHTML = "Debe ingresar un nombre"
+                if ($errorBackName) {
+                    $errorBackName.innerHTML = ""
+                }
+                errors.name = true
                 break;
-            case !validation.valiName.test($inputName.value):
-                 $errorName.innerHTML = "Nombre invalido"   
+            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 3):
+                $errorName.innerHTML = "Ingrese un nombre válido"   
+                if ($errorBackName) {
+                    $errorBackName.innerHTML = ""
+                }
+                errors.name = true
                 break;
             default:
                 $errorName.innerHTML = ""
+                errors.name = false
         }
     })
+
+
     $inputPrice.addEventListener("blur", e =>{
         switch(true){
             case !$inputPrice.value.trim():
                 $errorPrice.innerHTML = "Ingrese un precio"
+                if ($errorBackPrice) {
+                    $errorBackPrice.innerHTML = ""
+                }
+                errors.price = true
                 break;
             case !validation.valiPrice.test($inputPrice.value):
-                $errorPrice.innerHTML = "Ingrese un precio correcto"   
+                $errorPrice.innerHTML = "Sólo se admiten números"   
+                if ($errorBackPrice) {
+                    $errorBackPrice.innerHTML = ""
+                }
+                errors.price = true
                 break;
             default:
                 $errorPrice.innerHTML = ""
+                errors.price = false
         }
     })
+
+
     $inputCategory.addEventListener("blur", e =>{
         switch(true){
             case !$inputCategory.value.trim():
-                $errorCategory.innerHTML = "Seleccione una categoria"
+                $errorCategory.innerHTML = "Debe elegir una categoría"
+                if ($errorBackCategory) {
+                    $errorBackCategory.innerHTML = ""
+                }
+                errors.category = true
                 break;
+            /* case !validation.vali.test($inputCategory.value):
+                $errorCategory.innerHTML = "La categoria no fue seleccionada"   
+                break; */
             default:
                 $errorCategory.innerHTML = ""
+                errors.category = false
         }
     })
+
+
     $inputStock.addEventListener("click", ()=>{
         $inputStock.value = "on"
         $inputStock.innerHTML = ""
     })
-    $inputDescription.addEventListener("blur", e =>{
+
+
+    /*$inputDescription.addEventListener("blur", e =>{
         switch(true){
             case !$inputDescription.value.trim():
                 $errorDescription.innerHTML = "Ingrese una descripcion del producto"
@@ -74,28 +119,35 @@ window.addEventListener("load", ()=>{
                 $errorDescription.innerHTML = ""
         }
     })
+
+    */
     $inputFile.addEventListener("change", function fileValidation(){
         let fileCapturado = $inputFile.value, extensionesPermitidas = /(.jpg|.jpeg|.png|.gif)$/i
         if(!extensionesPermitidas.exec(fileCapturado)){
-            $errorFile.innerHTML = "Carga un archivo valido este <br>debe tener alguna de las<br> extensiones permitidas<br>(.jpg |.jpeg |.png |.gif)"
+            $errorFile.innerHTML = "Carga un archivo valido con extension<br>.jpg | .jpeg | .png | .gif"
             $inputFile.value = ""
+            errors.file = true
             return false
+        } else {
+            $errorFile.innerHTML = ""
+            errors.file = false
+            return true
         }
     })
-    $formulario.addEventListener("submit", function(e){
-        e.preventDefault();
-        let form = this.elements
-        console.log(form)
-        for(let i = 0; i < form.length -1; i ++){
-            if(form[i].value ==""){
-                
-                $errorSubmit.innerHTML = "Los datos señalados son obligatorios"
-            }
-            else{
-            alert("Hay errores en el formulario")
-            }
+
+    $formulario.addEventListener("submit", function(event){
+        event.preventDefault()
+
+        if(errors.name == true || errors.price == true || errors.category == true ){
+            $errorSubmit.innerHTML = "Complete el formulario correctamente"
+        } 
+
+        if(errors.name == false && errors.price == false && errors.category == false ){
+            $errorSubmit.innerHTML = ""
+            $formulario.submit()
         }
-         
+
+        
     })
 
 })

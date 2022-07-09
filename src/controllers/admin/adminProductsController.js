@@ -74,6 +74,17 @@ module.exports = {
                 res.redirect('/admin/productos')
             })
             .catch((error) => res.send(error));*/
+        } else {
+            db.Category.findAll()
+                .then((categorias) => {
+                    res.render("admin/products/addProduct", {
+                        titulo: "Agregar producto",
+                        categorias,
+                        errors: errors.mapped(),
+                        session: req.session
+                    })
+                })
+                .catch((error) => { res.send(error) });
         }
     },
 
