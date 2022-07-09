@@ -7,6 +7,7 @@ const adminCategoriesController = require('../controllers/admin/adminCategoriesC
 const uploadImageFile = require("../middlewares/uploadProductImage")
 const productCreateValidator = require("../validations/productCreateValidator");
 const categorieCreateValidator = require("../validations/categorieCreateValidator");
+const categorieEditValidator = require("../validations/categorieEditValidator");
 const productEditValidator = require("../validations/productEditValidator");
 const userSessionCheck = require("../middlewares/userSessionCheck");
 const adminCheck = require("../middlewares/adminCheck");
@@ -39,7 +40,7 @@ router.post("/categorias", categorieCreateValidator ,adminCategoriesController.c
 
 router.get("/categorias/editar/:id", userSessionCheck, adminCheck, adminCategoriesController.categorieEdit);
 
-router.put('/categorias/:id', adminCategoriesController.categorieUpdate);
+router.put('/categorias/:id', categorieEditValidator, adminCategoriesController.categorieUpdate);
 
 router.delete('/categorias/eliminar/:id', adminCategoriesController.categorieDelete);
 

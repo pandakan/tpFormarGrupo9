@@ -67,6 +67,7 @@ body form div.input_check-container {
     font-size: 13px;
     margin-top: 10px;
     margin-bottom: 15px;
+    gap: 7px;
 }
 
 .checkbox-input{
@@ -86,10 +87,8 @@ body div.container main.forms-container form.form-register div.input-container i
 
 body form span.error-message{
     color: red;
-    font-size: 10px;
     text-align: center;
-    margin-top: 8px;
-    margin-bottom: 5px;
+    
 }
 
 body form input.input-style{

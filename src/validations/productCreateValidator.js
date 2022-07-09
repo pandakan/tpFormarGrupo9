@@ -2,9 +2,9 @@ const {check} = require("express-validator");
 
 let validateProduct = [
     check("name")
-        .notEmpty().withMessage("El campo nombre es requerido").bail()
+        .notEmpty().withMessage("Debe ingresar un nombre").bail()
         .isAlphanumeric().withMessage("Ingrese un nombre válido")
-        .isLength({min: 5}).withMessage("El nombre debe tener al menos 5 caracteres"),
+        .isLength({min: 5}).withMessage("Ingrese un nombre válido"),
     check("price")
         .notEmpty().withMessage("Ingrese un precio").bail()
         .isNumeric().withMessage("Sólo se admiten números"),

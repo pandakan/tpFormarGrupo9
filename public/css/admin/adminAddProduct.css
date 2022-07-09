@@ -34,6 +34,7 @@ div.addProduct div label{
 div.addProduct div input,
 div.addProduct div select{
     margin-top: 10px;
+    margin-bottom: 20px;
     height: 40px;
     border-radius: 10px;
     padding: 0 10px;
@@ -52,7 +53,6 @@ div.addProduct form div img{
 
 div.addProduct form div small {
     color: red;
-    margin-top: 10px;
 }
 
 div.addProduct div#stock{

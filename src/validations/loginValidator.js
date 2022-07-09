@@ -5,7 +5,7 @@ const db = require("../database/models");
 
 let validateLogin = [
     check("email")
-        .notEmpty().withMessage("Debe poner email").bail()
+        .notEmpty().withMessage("Debe ingresar un email").bail()
         .isEmail().withMessage("Ingrese un email válido"),
     body("custom").custom((value, { req }) => {
         return db.User.findOne({
@@ -23,7 +23,7 @@ let validateLogin = [
         })
     }),
     check("password")
-        .notEmpty().withMessage("Ingrese su contraseña")
+        .notEmpty().withMessage("Ingrese una contraseña")
 ];
 
 module.exports = validateLogin;
