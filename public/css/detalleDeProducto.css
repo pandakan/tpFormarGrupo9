@@ -8,6 +8,10 @@ section.detalleDeProducto img {
     width: 100vw;
 }
 
+section.detalleDeProducto img {
+    margin-top: 100px;
+}
+
 section.detalleDeProducto div {
     display: flex;
     flex-direction: column;

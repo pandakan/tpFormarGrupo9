@@ -145,6 +145,39 @@ module.exports = {
             })
         }*/
     },
+
+    profile: (req, res) => {
+        let idUser = +req.params.id;
+
+        db.User.findOne({
+            where: {
+                id: idUser
+            }
+        })
+        .then(user => {
+            res.render("users/perfil", {
+                user: user,
+                session: req.session
+            })
+        })
+    },
+
+    editProfile: (req, res) => {
+        let idUser = +req.params.id;
+
+        db.User.findOne({
+            where: {
+                id: idUser
+            }
+        })
+        .then(user => {
+            res.render("users/editProfile", {
+                user: user,
+                session: req.session
+            })
+        })
+    },
+
     logout: (req, res) =>{
         req.session.destroy();
 

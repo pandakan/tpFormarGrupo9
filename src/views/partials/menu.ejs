@@ -1,6 +1,6 @@
 <section class="menu">
     <% productos.forEach(producto => { %>
-        <article>
+        <article class="product">
             <a href="/productos/detalle/<%= producto.id  %> "><img src="/images/products/<%= producto.productImages[0].imageName %>"  alt=""></a>
             <h3><%= producto.name %></h3>
             <p><%= producto.description %></p>

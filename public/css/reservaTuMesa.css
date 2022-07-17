@@ -1,8 +1,8 @@
 div.container h2.header_reservaTuMesa {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 div.container section.reservaTuMesa form div {
@@ -13,20 +13,21 @@ div.container section.reservaTuMesa form div {
 }
 
 div.container section.reservaTuMesa form div input {
-  width: 125px;
-  border-radius: 20px;
-  border-color: var(--naranja-Fuerte);
-  color: var(--negro);
-  text-align: center;
+    width: 190px;
+    height: 50px;
+    border-radius: 20px;
+    border-color: var(--naranja-Fuerte);
+    color: var(--negro);
+    text-align: center;
 }
 
-div.container section.reservaTuMesa form div input::placeholder{
+div.container section.reservaTuMesa form div input::placeholder {
     text-align: center;
     font-size: 10px;
 }
 
 div.container section.reservaTuMesa form div button {
-    width: 125px;
+    width: 190px;
     border: none;
     background-color: var(--naranja-Fuerte);
     color: white;
@@ -36,9 +37,9 @@ div.container section.reservaTuMesa form div button {
 
 div.container section.reservaTuMesa form div input:focus {
     outline: none;
-} 
+}
 
-@media screen and (min-width: 768px){ 
+@media screen and (min-width: 768px) {
 
     div.container section.reservaTuMesa form div input {
         width: 30%;
@@ -46,15 +47,15 @@ div.container section.reservaTuMesa form div input:focus {
         margin-top: 10px;
         text-align: center;
     }
-    
+
     div.container section.reservaTuMesa form div button {
         width: 30%;
         height: 50px;
         margin-top: 10px;
     }
 
-    div.container section.reservaTuMesa form div input::placeholder{
+    div.container section.reservaTuMesa form div input::placeholder {
         font-size: 20px;
-        
+
     }
 }

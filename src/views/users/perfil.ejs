@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head")  %> 
+
+<body>
+    <div class="container">
+        <%- include("../partials/header") -%> 
+
+
+        <section id="userProfile">
+            <h1>Pagina en Proceso</h1>
+            <form>
+                <p><a href="/users/editProfile/<%= session.user.id %> ">Hace click aqui para editar tu perfil</a></p>
+                <p><a href=""></a></p>
+            </form>
+
+        </section>
+
+        <%- include("../partials/footer")  %> 
+    </div>
+    <script src="/js/header.js"></script>
+</body>
+
+</html>

@@ -14,6 +14,12 @@ router.get('/registro', userInSessionCheck, usersController.register);
 
 router.post("/registro", uploadAvatar.single("avatar"), registerValidator,usersController.processRegister);
 
+router.get("/editProfile/:id", usersController.editProfile);
+
+//router.post("/editProfile/:id", usersController.processEditProfile);
+
+router.get("/perfil/:id", usersController.profile)
+
 router.get("/logout", usersController.logout);
 
 module.exports = router;

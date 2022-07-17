@@ -28,7 +28,7 @@
             <li><a href="/#reservaTuMesa">Reservas</a></li>
             <form action="/search" method="get" class="search1"> 
                 <input type="text" name="Busqueda" placeholder="Elegi tu pizza!!!">
-             </form>
+            </form>
             <% if (typeof session.user != "undefined") { %>
                 <% if (session.user.rol === 1) { %>
                     <li><a href="/admin">Admin</a></li>
@@ -37,12 +37,13 @@
         </ul>
         <ul class="header_menu" id="menu2">
             <% if (typeof session.user != "undefined") { %>
-                <li><a href="/users/perfil">Mi Perfil</a></li>
+                <li><a href="/users/perfil/<%= session.user.id %>  ">Mi Perfil</a></li>
                 <li><a href="/users/logout">Cerrar Sesión</a></li>
             <% } else {%>
                 <li><a href="/users/login">Acceder</a></li>
                 <li><a href="/users/registro">Registrarse</a></li>
             <% }%>
         </ul>
+        
     </nav>
 </header>
