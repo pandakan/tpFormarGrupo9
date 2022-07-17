@@ -157,7 +157,7 @@ header.user nav.main-nav-menu.active{
 div.container img#fondo {
     object-fit: contain;
     width: 100%;
-
+    margin-top: 100px;
 }
 
 @media screen and (min-width: 768px){

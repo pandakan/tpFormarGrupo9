@@ -81,6 +81,7 @@ module.exports = {
                         titulo: "Agregar producto",
                         categorias,
                         errors: errors.mapped(),
+                        old: req.body,
                         session: req.session
                     })
                 })

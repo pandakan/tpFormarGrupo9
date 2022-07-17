@@ -41,19 +41,27 @@ window.addEventListener("load", ()=>{
     $inputName.addEventListener("blur", e =>{
         switch(true){
             case !$inputName.value.trim():
-                $errorName.innerHTML = "Debe ingresar un nombre"
+                $errorName.innerHTML = "Debe ingresar un nombre "
                 if ($errorBackName) {
                     $errorBackName.innerHTML = ""
                 }
                 errors.name = true
                 break;
-            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 3):
-                $errorName.innerHTML = "Ingrese un nombre válido"   
+            case !validation.valiName.test($inputName.value):
+                $errorName.innerHTML = "Ingrese un nombre sin numeros o caracteres especiales"   
                 if ($errorBackName) {
                     $errorBackName.innerHTML = ""
                 }
                 errors.name = true
                 break;
+                case $inputName.value.length < 5:
+                    $errorName.innerHTML = "Ingrese un nombre con 5 letras o más"   
+                if ($errorBackName) {
+                    $errorBackName.innerHTML = ""
+                }
+                errors.name = true
+                break;
+            
             default:
                 $errorName.innerHTML = ""
                 errors.name = false

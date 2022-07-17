@@ -29,7 +29,7 @@
               <select id="id_categoria" name="categoryId">
                 <option selected hidden value="">Categoría</option>
                 <% categorias.forEach(categoria => { %>
-                  <option value="<%=categoria.id  %>" <%= (locals.old && old.categoryId) && old.categoryId === categoria.id ? "selected" : "" %>><%=categoria.name%></option>
+                  <option value="<%=categoria.id%>" <%= (locals.old && old.categoryId) && old.categoryId == categoria.id ? "selected" : "" %>><%=categoria.name%></option>
                 <% }) %>
               </select>
               <% if (locals.errors && errors.categoryId) { %>
