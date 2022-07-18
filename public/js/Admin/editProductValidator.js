@@ -1,6 +1,6 @@
 const QS = (element) => document.querySelector(element);
 window.addEventListener("load", () => {
-    let $formulario = QS("form"),
+    let $formulario = QS("#form"),
         $inputName = QS("#name"),
         $inputPrice = QS("#price"),
         $inputCategory = QS("#id_categoria"),
@@ -87,27 +87,27 @@ window.addEventListener("load", () => {
         }
     });
 
-    $inputCategory.addEventListener("blur", (e) => {
-        switch (true) {
+    $inputCategory.addEventListener("blur", e =>{
+        switch(true){
             case !$inputCategory.value.trim():
-                $errorCategory.innerHTML = "Debe elegir una categoría";
+                $errorCategory.innerHTML = "Debe elegir una categoría"
                 if ($errorBackCategory) {
-                    $errorBackCategory.innerHTML = "";
+                    $errorBackCategory.innerHTML = ""
                 }
-                errors.category = true;
+                errors.category = true
                 break;
             /* case !validation.vali.test($inputCategory.value):
-                      $errorCategory.innerHTML = "La categoria no fue seleccionada"   
-                      break; */
+                $errorCategory.innerHTML = "La categoria no fue seleccionada"   
+                break; */
             default:
-                $errorCategory.innerHTML = "";
-                errors.category = false;
+                $errorCategory.innerHTML = ""
+                errors.category = false
         }
-    });
+    })
 
     $inputStock.addEventListener("click", () => {
         $inputStock.value = "on";
-        $inputStock.innerHTML = "";
+        //$inputStock.innerHTML = "";
     });
 
     /*$inputDescription.addEventListener("blur", e =>{
@@ -141,23 +141,17 @@ window.addEventListener("load", () => {
     });
 
     $formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
+        console.log(errors)
+        event.preventDefault()
 
-        if (
-            errors.name == true ||
-            errors.price == true ||
-            errors.category == true
-        ) {
+        if (errors.name == true || errors.price == true || errors.category == true) {
             $errorSubmit.innerHTML = "Complete el formulario correctamente";
         }
 
-        if (
-            errors.name == false &&
-            errors.price == false &&
-            errors.category == false
-        ) {
+        if (errors.name == false && errors.price == false && errors.category == false) {
             $errorSubmit.innerHTML = "";
             $formulario.submit();
         }
     });
-});
+
+})

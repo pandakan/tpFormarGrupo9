@@ -6,10 +6,10 @@
 
   <div class="addProduct">
     <legend>Editar Producto: <%= producto.name  %> </legend>
-    <form action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
         <div>
           <label for="name">Nombre del producto</label>
-          <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella" value="<%= producto.name  %>">
+          <input type="text" name="name" id="name" placeholder="Ej: Pizza Muzzarella" value="<%= (locals.old && old.name) ? old.name : producto.name  %>">
           <% if (locals.errors && errors.name) { %>
             <small id="errorBackName"><%= errors.name.msg%></small>
           <% } %>
@@ -17,7 +17,7 @@
         </div>
         <div>
           <label for="price">Precio del producto</label>
-          <input type="number" name="price" id="price" placeholder="Ej: 1000" value="<%= producto.price  %>">
+          <input type="number" name="price" id="price" placeholder="Ej: 1000" value="<%= (locals.old && old.price) ? old.price : producto.price  %>">
           <% if (locals.errors && errors.price) { %>
             <small id="errorBackPrice"><%= errors.price.msg%></small>
           <% } %>
@@ -25,10 +25,10 @@
         </div>
         <div>
           <label for="category">Categorias</label>
-          <select name="categoryId">
+          <select name="categoryId" id="id_categoria">
             <option selected hidden>Categoría</option>
             <% categorias.forEach(categoria => { %>
-              <option value="<%=categoria.id  %>"  <%= (locals.old && old.categoryId) && old.categoryId == categoria.id || categoria.id == producto.category_id ? "selected" : "" %>><%=categoria.name  %></option>
+              <option  value="<%=categoria.id  %>"  <%= (locals.old && old.categoryId) && old.categoryId == categoria.id || categoria.id == producto.category_id ? "selected" : "" %>><%=categoria.name  %></option>
             <% }) %> 
             <!--<option value="1">Comun</option>-->
             <!--<option value="2">Vegetariana</option>-->
@@ -48,13 +48,13 @@
           <small id="errorImage" style="color: red;"></small>
         </div>
         <div id="stock">
-          <input <%= producto.stock ? "checked" : "" %>   name="stock" type="checkbox" role="switch" id="stock">
+          <input <%= (locals.old && old.stock) ? old.stock : producto.stock %> name="stock" type="checkbox" role="switch" id="stock">
           <label for="stock">Stock disponible</label>
           <small id="errorStock" style="color: red;"></small>
         </div>
         <div>
           <label for="description">Descripción</label>
-          <textarea name="description" id="description" rows="4"><%= producto.description %></textarea>
+          <textarea name="description" id="description" rows="4"><%= (locals.old && old.description) ? old.description : producto.description %></textarea>
           <small id="errorDescription" style="color: red;"></small>
         </div>
         <div>

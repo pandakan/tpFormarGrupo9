@@ -150,8 +150,7 @@ module.exports = {
                                     if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))){
                                         fs.unlinkSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))
                                     } else {
-                                        //console.log('No se encontró el archivo')
-                                        res.send('Error 1')
+                                        console.log('No se encontró el archivo')
                                     }
 
                                     db.ProductImage.destroy({
@@ -167,16 +166,16 @@ module.exports = {
                                                 .then(() => {
                                                     res.redirect('/admin/productos')
                                                 })
-                                                .catch((error) => /*console.log(error)*/res.send('error 2'))
+                                                .catch((error) => console.log(error))
                                         })
-                                        .catch((error) => /*console.log(error)*/res.send('error 3'))
+                                        .catch((error) => console.log(error))
                                 })
-                                .catch((error) => /*console.log(error)*/res.send('error 4')) 
+                                .catch((error) => console.log(error)) 
                     } else {
                         res.redirect('/admin/productos')
                     }
                 })
-                .catch((error) => /*console.log(error)*/res.send('error 6'))
+                .catch((error) => console.log(error))
 
 
         } else {
