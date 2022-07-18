@@ -1,6 +1,6 @@
-const QS = (element)=>document.querySelector(element)
+const QS = (element) => document.querySelector(element)
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
     let $formulario = QS("#form")
     let $inputName = QS("#name")
     let $inputEmail = QS("#email")
@@ -15,18 +15,18 @@ window.addEventListener("load", ()=>{
     let $errorBackPasswd2 = QS("#errorBackPasswd2")
     let $errorBackTerms = QS("#errorBackTerms")
 
-    
+
 
     /* Expresiones */
     const validation = {
-        valiName :/^[a-zA-ZÀ-ÿ\s]{2,40}$/,
-        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
-        
+        valiName: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
+        valiPasswd: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+
 
         //^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&#.$($)$-$_])[A-Za-z\d$@$!%?&#.$($)$-$_]{8,16}$/
         /* /^(?=(?:.\d))(?=(?:.[A-Z]))(?=(?:.*[a-z]))\S{8,}$/ */,
-        valiEmail:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        valiTelefono:/^\d{7,14}$/
+        valiEmail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        valiTelefono: /^\d{7,14}$/
     }
     /* errors */
     let $errorName = QS("#errorName")
@@ -36,11 +36,11 @@ window.addEventListener("load", ()=>{
     let $errorPassswd2 = QS("#errorPasswd2")
     let $errorCaptcha = QS("#errorCaptcha")
     let $errorTerms = QS("#errorTerms")
-    let $errorSubmit=QS("#errorSubmit") 
+    let $errorSubmit = QS("#errorSubmit")
 
     let errors = {
-        name:true,
-        email:true,
+        name: true,
+        email: true,
         passwd: true,
         passwd2: true,
         file: true,
@@ -48,7 +48,7 @@ window.addEventListener("load", ()=>{
     }
 
     $inputName.addEventListener("blur", e => {
-        switch(true){
+        switch (true) {
             case !$inputName.value.trim():
                 $errorName.innerHTML = "Debe ingresar un nombre"
                 if ($errorBackName) {
@@ -56,8 +56,8 @@ window.addEventListener("load", ()=>{
                 }
                 errors.name = true
                 break;
-            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 3):
-                $errorName.innerHTML = "Ingrese un nombre válido"  
+            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 4):
+                $errorName.innerHTML = "Ingrese un nombre válido"
                 if ($errorBackName) {
                     $errorBackName.innerHTML = ""
                 }
@@ -70,7 +70,7 @@ window.addEventListener("load", ()=>{
     })
 
     $inputEmail.addEventListener("blur", e => {
-        switch(true){
+        switch (true) {
             case !$inputEmail.value.trim():
                 $errorEmail.innerHTML = "Debe ingresar un email"
                 if ($errorBackEmail) {
@@ -79,7 +79,7 @@ window.addEventListener("load", ()=>{
                 errors.email = true
                 break;
             case !validation.valiEmail.test($inputEmail.value):
-                $errorEmail.innerHTML = "Ingrese un email válido"   
+                $errorEmail.innerHTML = "Ingrese un email válido"
                 if ($errorBackEmail) {
                     $errorBackEmail.innerHTML = ""
                 }
@@ -92,7 +92,7 @@ window.addEventListener("load", ()=>{
     })
 
     $inputPasswd.addEventListener("blur", e => {
-        switch(true){
+        switch (true) {
             case !$inputPasswd.value.trim():
                 $errorPasswd.innerHTML = "Ingrese una contraseña"
                 if ($errorBackPasswd) {
@@ -138,26 +138,62 @@ window.addEventListener("load", ()=>{
         }
     })
 
-    $inputTerms.addEventListener("click", function(){
+    $inputTerms.addEventListener("click", function () {
         $inputTerms.value = "on"
         $inputTerms.innerHTML = ""
         errors.terms = false
     })
 
-    $inputFile.addEventListener("change", function fileValidation(){
+    $inputFile.addEventListener("click", function(){
+        switch (true) {
+            case ($inputFile.files.length == 0):
+                $errorFile.innerHTML = "Carga un archivo"
+                $inputFile.value = ""
+                //$viewFile.innerHTML = ""
+                errors.file = true
+                //return false
+                break;
+        }
+    })
+
+    $inputFile.addEventListener("change", function fileValidation() {
         let fileCapturado = $inputFile.value, extensionesPermitidas = /(.jpg|.jpeg|.png|.gif)$/i
-        if(!extensionesPermitidas.exec(fileCapturado)){
+
+        switch (true) {
+            case (!extensionesPermitidas.exec(fileCapturado)):
+                $errorFile.innerHTML = "Carga un archivo valido con extension<br>.jpg | .jpeg | .png | .gif"
+                $inputFile.value = ""
+                //$viewFile.innerHTML = ""
+                errors.file = true
+                //return false
+                break;
+            default:
+                $errorFile.innerHTML = ""
+                errors.file = false
+                break;
+        }
+
+
+
+        /*if($inputFile.files.length == 0){
+            $errorFile.innerHTML = "Carga un archivo"
+            $inputFile.value = ""
+            //$viewFile.innerHTML = ""
+            errors.file = true
+            //return false
+        } else if(!extensionesPermitidas.exec(fileCapturado)){
             $errorFile.innerHTML = "Carga un archivo valido con extension<br>.jpg | .jpeg | .png | .gif"
             $inputFile.value = ""
             //$viewFile.innerHTML = ""
             errors.file = true
-            return false
-        } else {
+            //return false
+        }else{
             errors.file = false
-        }
+        }*/
     })
 
-    $formulario.addEventListener("submit", function(event){
+    $formulario.addEventListener("submit", function (event) {
+        console.log(errors)
         event.preventDefault()
 
         if (!$inputTerms.checked) {
@@ -168,19 +204,19 @@ window.addEventListener("load", ()=>{
             //$errorBackTerms.innerHTML = "";
         }
 
-        if(errors.name == true || errors.email == true || errors.passwd == true || errors.passwd2 == true || errors.file == true || errors.terms == true){
+        if (errors.name == true || errors.email == true || errors.passwd == true || errors.passwd2 == true || errors.file == true || errors.terms == true) {
             $errorSubmit.innerHTML = "Complete el formulario correctamente"
-            
-        } 
 
-        if(errors.name == false && errors.email == false && errors.passwd == false && errors.passwd2 == false && errors.file == false && errors.terms == false){
+        }
+
+        if (errors.name == false && errors.email == false && errors.passwd == false && errors.passwd2 == false && errors.file == false && errors.terms == false) {
 
             $errorSubmit.innerHTML = ""
             $formulario.submit()
-            
+
         }
 
-        
+
     })
 
 

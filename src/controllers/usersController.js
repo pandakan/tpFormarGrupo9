@@ -98,7 +98,7 @@ module.exports = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 avatar: req.file ? req.file.filename : "default-image.png",
-                rol_id: 1,
+                rol_id: 2,
             })
             .then(user => {
                 res.redirect("/users/login");

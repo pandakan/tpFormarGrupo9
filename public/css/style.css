@@ -18,6 +18,7 @@
 @import url("variables.css");
 @import url("formularioLogin.css");
 @import url("userProfile.css");
+@import url("resultSearch.css");
 
 @import url("admin/adminIndex.css");
 @import url("admin/adminAddProduct.css");

@@ -1,0 +1,9 @@
+html body div.container h1#resultados {
+    margin-top: 150px;
+    text-align: center;
+}
+
+html body div.container section.menu h2 {
+    margin-top: 30px;
+    margin-bottom: 182px;
+}
