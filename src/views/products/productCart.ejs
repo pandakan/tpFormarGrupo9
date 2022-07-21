@@ -9,10 +9,10 @@
         <div class="cuerpoCarrito">
             <h1>Carrito de Compras</h1>
             <div class="infoDeProductosCarrito">
-                <img src="/images/Pizza_1.png" alt="">
+                <img src="/images/products/<%= product.productImages[0].imageName  %> " alt="">
                 <div class="nombrePrecioProducto">
-                    <p>Pizza Vegetariana</p>
-                    <p>Precio: $1234</p>
+                    <p><%= product.name %> </p>
+                    <p>Precio: $<%= product.price %> </p>
                 </div>
                 <p>Cantidad: <input type="number" name="" id=""></p>
                 <p class="noVisibleAndroid">Sub Total: $12341</p>

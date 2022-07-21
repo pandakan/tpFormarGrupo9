@@ -3,10 +3,25 @@ const { getProducts } = require('../data');
 const db = require('../database/models');
 
 module.exports = {
-    shopCart: (req, res) => {   
-        res.render('products/productCart',{
-            session: req.session
+    shopCart: (req, res) => {  
+        
+        db.Product.findOne({
+            where: {
+                id: 2
+            },
+            include: [{ association: "productImages" }]
         })
+        .then(product => {
+            res.render('products/productCart', {
+                product: product,
+                session: req.session
+            })
+        })
+        .catch(error => res.send(error))
+
+        /*res.render('products/productCart',{
+            session: req.session
+        })*/
     },
     details: (req,res) => {
 
