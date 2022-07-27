@@ -2,6 +2,8 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
     login: (req, res) => {
@@ -176,6 +178,113 @@ module.exports = {
                 session: req.session
             })
         })
+    },
+
+    processEditProfile: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            db.User.update({
+                name: req.body.name,
+                adress: req.body.adress,
+                city: req.body.city,
+                phone: req.body.phone,
+                adress_number: req.body.adressNumber,
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                if(req.file){
+                    db.User.findOne({
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(user => {
+                        if (fs.existsSync(path.join(__dirname, `../../public/images/users/${user.avatar}`))    ) {
+                            fs.unlinkSync(path.join(__dirname, `../../public/images/users/${user.avatar}`))
+                        } else {
+                            console.log('No se encontró el archivo')
+                        }
+                            db.User.update({
+                                avatar: req.file.filename
+                            }, {
+                                where: {
+                                    id: req.params.id
+                                }
+                            })
+                            .then(() => {
+                                res.redirect("/users/perfil/" + req.params.id)
+                            })
+                            .catch(error => console.log(error));
+                    })
+                    .catch(error => console.log(error))
+                } else {
+                    res.redirect("/users/perfil/" + req.params.id);
+                }
+            })
+            .catch(error => res.send(error));
+        } else {
+            res.render("users/editProfile", {
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session
+            })
+        }
+
+
+    },
+
+    editPassword: (req, res) => {
+        let idUser = +req.params.id;
+
+        db.User.findOne({
+            where: {
+                id: idUser
+            }
+        })
+        .then(user => {
+            res.render("users/editPassword", {
+                user: user,
+                session: req.session
+            })
+        })
+    },
+    
+    processEditPassword: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            console.log(errors.mapped())
+            db.User.update({
+                password: bcrypt.hashSync(req.body.newPassword1, 10)
+            },{
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/users/perfil/" + req.params.id)
+            })
+            .catch(error => console.log(error));
+        } else {
+            console.log(errors.mapped())
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(user => {
+                res.render("users/editPassword", {
+                    user: user,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                })
+            })
+            .catch(error => console.log(error))
+            
+        }
     },
 
     logout: (req, res) =>{

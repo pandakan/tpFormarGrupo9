@@ -7,15 +7,42 @@
     <div class="container">
         <%- include("../partials/header") -%> 
 
-
+        <div class="divPerfil">
         <section id="userProfile">
-            <h1>Pagina en Proceso</h1>
-            <form>
-                <p><a href="/users/editProfile/<%= session.user.id %> ">Hace click aqui para editar tu perfil</a></p>
-                <p><a href=""></a></p>
-            </form>
+            <h1>Perfil</h1>
+                <button><a href="/users/editProfile/<%= session.user.id %>">EDITAR PERFIL</a></button>
+                <button><a href="/users/editPassword/<%= session.user.id %>">CAMBIAR CONTRASEÑA</a></button>
+                <button><a href="/users/deleteAccount/<%= session.user.id %>">ELIMINAR CUENTA</a></button>
+                <button><a href="/users/logout">CERRAR SESIÓN</a></button>
 
         </section>
+        <form>
+            <div class="infoProfile">
+                <label for="name">Nombre</label>
+                <input type="text" readonly class="input-style" name="name" id="name" placeholder="Nombre" value="<%= user.name ? user.name : "" %>"/>
+
+                <label for="email">Email</label>
+                <input type="email" readonly class="input-style" id="email" name="email" placeholder="Email" value="<%= user.email ? user.email : "" %>"/>
+
+                <label>Avatar</label>
+                <img src="/images/users/<%= user.avatar %>">
+
+                <label for="adress">Calle</label>
+                <input type="text" readonly class="input-style" id="adress" name="adress" placeholder="Calle" value="<%= user.adress ? user.adress : "" %>"/>
+
+                <label for="adressNumber">Numero de calle</label>
+                <input type="number" readonly class="input-style" id="adressNumber" name="adressNumber" placeholder="Numero de calle" value="<%= user.adress_number ? user.adress_number : "" %>"/>
+
+                <label for="city">Ciudad</label>
+                <input type="text" readonly class="input-style" id="city" name="city" placeholder="Ciudad" value="<%= user.city ? user.city : "" %>"/>
+
+                <label for="phone">Numero de Telefono</label>
+                <input type="number" readonly class="input-style" id="phone" name="phone" placeholder="Numero de Telefono" value="<%= user.phone ? user.phone : "" %>"/>
+            </div>
+        </form>
+    </div>
+
+        
 
         <%- include("../partials/footer")  %> 
     </div>

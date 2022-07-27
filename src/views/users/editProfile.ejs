@@ -7,12 +7,40 @@
     <div class="container">
         <%- include("../partials/header") -%> 
 
+        <div class="divEditPerfil">
         <section id="userProfile">
-            <h1>Pagina en Proceso</h1>
-            <div>
-                <p><a href=""></a></p>
-            </div>
+            <h1>EDITAR PERFIL</h1>
         </section>
+
+        <form action="/users/editProfile/<%= user.id %>" id="form" method="post" enctype="multipart/form-data">
+            <div class="infoProfile">
+                <label for="name">Nombre</label>
+                <input type="text" class="input-style" name="name" id="name" placeholder="Nombre" value="<%= user.name ? user.name : "" %>"/>
+
+                <label for="email">Email</label>
+                <input type="email" readonly class="input-style" id="email" name="email" placeholder="Email" value="<%= user.email ? user.email : "" %>"/>
+
+                <label>Avatar</label>
+                <img src="/images/users/<%= user.avatar %>">
+
+                <input type="file" class="input-style" name="avatar" id="avatar" placeholder="Avatar">
+
+                <label for="adress">Calle</label>
+                <input type="text" class="input-style" id="adress" name="adress" placeholder="Calle" value="<%= user.adress ? user.adress : null %>"/>
+
+                <label for="adressNumber">Numero de calle</label>
+                <input type="number" class="input-style" id="adressNumber" name="adressNumber" placeholder="Numero de calle" value="<%= user.adress_number ? user.adress_number : "" %>"/>
+
+                <label for="city">Ciudad</label>
+                <input type="text" class="input-style" id="city" name="city" placeholder="Ciudad" value="<%= user.city ? user.city : "" %>"/>
+
+                <label for="phone">Numero de Telefono</label>
+                <input type="number" class="input-style" id="phone" name="phone" placeholder="Numero de Telefono" value="<%= user.phone ? user.phone : null %>"/>
+
+                <button type="submit">EDITAR</button>
+            </div>
+        </form>
+    </div>
 
         <%- include("../partials/footer")  %> 
     </div>

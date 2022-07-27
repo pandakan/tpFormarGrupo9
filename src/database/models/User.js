@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45)
         },
         rol_id: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.INTEGER(11),
             allowNull: false,
         },
         adress: {
@@ -35,6 +35,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         phone: {
             type: DataTypes.STRING(100),
+        },
+        adress_number: {
+            type: DataTypes.INTEGER(100),
         }
     }
 

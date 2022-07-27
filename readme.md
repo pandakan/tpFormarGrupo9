@@ -52,7 +52,7 @@
 
 Carlos: 
 
-Bryan 
+Brayan: Alumno de formar desde el año 2021, estudiante de la Universidad Tecnologica Nacional y Tecnico en Computacion. Con muchas ganas de aprender y de trabajar en el Sector IT como programador.
 
 Fernando: Estudiante de Desarrollo Web Full Stack con conocimientos en el area de marketing digital. Aspiro a ser programador y poder crecer en el sector IT.
 

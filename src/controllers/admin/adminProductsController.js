@@ -147,7 +147,7 @@ module.exports = {
                                 }
                             })
                                 .then((image) => {
-                                    if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))){
+                                    if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`)) && image.imageName != "default-image.png") {
                                         fs.unlinkSync(path.join(__dirname, `../../../public/images/products/${image.imageName}`))
                                     } else {
                                         console.log('No se encontró el archivo')
@@ -243,7 +243,7 @@ module.exports = {
                 let imageNames = images.map(image => image.imageName);
 
                 imageNames.forEach(image => {
-                    if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image}`))) {
+                    if (fs.existsSync(path.join(__dirname, `../../../public/images/products/${image}`)) && image != 'default-image.png') {
                         fs.unlinkSync(path.join(__dirname, `../../../public/images/products/${image}`))
                     } else {
                         console.log("-- No se encontró el archivo");

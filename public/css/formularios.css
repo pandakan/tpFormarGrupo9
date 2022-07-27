@@ -81,9 +81,6 @@ body div.container main.forms-container form.form-register div.input_check-conta
     gap: 5px;
 }
 
-body div.container main.forms-container form.form-register div.input-container input#avatar.input-style{
-    padding-bottom: 30px;
-}
 
 body form span.error-message{
     color: red;
@@ -95,7 +92,6 @@ body form input.input-style{
     border: solid 2px #e85f0c;
     border-radius: 20px;
     width: 250px;
-    height: 2rem;
     padding: 0.5rem;
     outline: none;
     text-align: center;
