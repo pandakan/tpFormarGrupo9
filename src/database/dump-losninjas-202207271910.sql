@@ -26,7 +26,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_FK` (`category_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `products_images` (
   PRIMARY KEY (`id`),
   KEY `products_images_FK` (`product_id`),
   CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,11 +113,12 @@ CREATE TABLE `users` (
   `adress` varchar(45) DEFAULT NULL,
   `city` varchar(45) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
+  `adress_number` int(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_un` (`email`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `users_rols` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +127,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@mail.com','$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu','img_1652641843292.jpg',1,NULL,NULL,NULL),(2,'user','user@mail.com','$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu','img_1652641843292.jpg',2,NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'admin','admin@mail.com','$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu','img_1652641843292.jpg',1,NULL,NULL,NULL,NULL),(2,'user','user@mail.com','$2a$10$DJp9v9vlYLD94q5zzCMlaeF1G3vihJ2zjKX.67C2HQ/KHK3iwhawu','img_1652641843292.jpg',2,NULL,NULL,NULL,NULL),(3,'UsuarioUno','usuariouno@mail.com','$2a$10$0/mii5OCPpaXiNGYG9WnPutB8z3Sde.B6cm1DJZKPXelksLyxn.HW','img_1657152600413.png',2,NULL,NULL,NULL,NULL),(5,'Jona','usuario3@mail.com','$2a$10$nW2BudqYinAvcdNaPXE9CeHEaKH5ybNtmv6rRSYPRjflnio.sCNAa','img_1658187681042.png',2,NULL,NULL,NULL,NULL),(6,'Nuevoa','usuario4@mail.com','$2a$10$QyTso1gfsVozzNkOTEWmmuVNrOTJGoULffMxYnMXL5cWzJ9olOsAC','img_1658188012319.png',2,NULL,NULL,NULL,NULL),(7,'Pruebas','usuariopruebas@mail.com','$2a$10$6KFAlmwN00uiBMPWIMk0IuhmN0/HlUGd7FjPEMrnFe07gjX9L4W2S','img_1658881741478.png',2,'','','',1560);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 19:44:44
+-- Dump completed on 2022-07-27 19:10:35
