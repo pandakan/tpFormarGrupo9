@@ -33,4 +33,8 @@ router.get("/editPassword/:id", userSessionCheck, usersController.editPassword);
 
 router.post("/editPassword/:id", userEditPasswordValidator, usersController.processEditPassword);
 
+router.get("/deleteAccount/:id", userSessionCheck, usersController.deleteAccount);
+
+router.delete("/deleteAccount/:id", usersController.processDeleteAccount);
+
 module.exports = router;

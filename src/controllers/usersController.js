@@ -185,6 +185,7 @@ module.exports = {
         if (errors.isEmpty()){
             db.User.update({
                 name: req.body.name,
+                email: req.body.email,
                 adress: req.body.adress,
                 city: req.body.city,
                 phone: req.body.phone,
@@ -226,11 +227,20 @@ module.exports = {
             })
             .catch(error => res.send(error));
         } else {
-            res.render("users/editProfile", {
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
             })
+            .then(user => {
+                res.render("users/editProfile", {
+                    user: user,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                })
+            })
+            .catch(error => console.log(error));
         }
 
 
@@ -250,6 +260,7 @@ module.exports = {
                 session: req.session
             })
         })
+        .catch(error => console.log(error));
     },
     
     processEditPassword: (req, res) => {
@@ -268,7 +279,6 @@ module.exports = {
             })
             .catch(error => console.log(error));
         } else {
-            console.log(errors.mapped())
             db.User.findOne({
                 where: {
                     id: req.params.id
@@ -295,7 +305,54 @@ module.exports = {
         }
 
         res.redirect("/");
-    }
+    },
+
+    deleteAccount: (req, res) => {
+
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(user => {
+            res.render("users/deleteAccount", {
+                user: user,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error));
+    },
+
+    processDeleteAccount: (req, res) => {
+        req.session.destroy();
+
+        if (req.cookies.pizzaCookie){
+            res.cookie("pizzaCookie", "", {maxAge: -1});
+        }
+
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(user => {
+            if (fs.existsSync(path.join(__dirname, `../../public/images/users/${user.avatar}`))    ) {
+                fs.unlinkSync(path.join(__dirname, `../../public/images/users/${user.avatar}`))
+            } else {
+                console.log('No se encontró el archivo')
+            }
+            db.User.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/")
+            })
+            .catch(error => console.log(error));
+        })
+        .catch(error => console.log(error));
+    },
 }
 
 

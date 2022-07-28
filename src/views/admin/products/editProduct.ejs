@@ -48,7 +48,7 @@
           <small id="errorImage" style="color: red;"></small>
         </div>
         <div id="stock">
-          <input <%= (locals.old && old.stock) ? old.stock : producto.stock %> name="stock" type="checkbox" role="switch" id="stock">
+          <input <%=(locals.old && old.stock) ? old.stock : producto.stock == 1 ? "checked" : "" %> name="stock" type="checkbox" role="switch" id="stock">
           <label for="stock">Stock disponible</label>
           <small id="errorStock" style="color: red;"></small>
         </div>

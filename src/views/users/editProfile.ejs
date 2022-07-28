@@ -16,14 +16,23 @@
             <div class="infoProfile">
                 <label for="name">Nombre</label>
                 <input type="text" class="input-style" name="name" id="name" placeholder="Nombre" value="<%= user.name ? user.name : "" %>"/>
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-message" id="errorBackName"><%= errors.name.msg %></span>
+                <% } %>
+                <span id="errorName" style="color: red;"></span>
 
                 <label for="email">Email</label>
-                <input type="email" readonly class="input-style" id="email" name="email" placeholder="Email" value="<%= user.email ? user.email : "" %>"/>
+                <input type="email"  class="input-style" id="email" name="email" placeholder="Email" value="<%= user.email ? user.email : "" %>"/>
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-message" id="errorBackName"><%= errors.email.msg %></span>
+                <% } %>
+                <span id="errorEmail" style="color: red;"></span>
 
                 <label>Avatar</label>
                 <img src="/images/users/<%= user.avatar %>">
 
                 <input type="file" class="input-style" name="avatar" id="avatar" placeholder="Avatar">
+                <small id="errorImage" style="color: red;"></small>
 
                 <label for="adress">Calle</label>
                 <input type="text" class="input-style" id="adress" name="adress" placeholder="Calle" value="<%= user.adress ? user.adress : null %>"/>

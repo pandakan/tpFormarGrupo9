@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head")  %> 
+
+<body>
+    <div class="container">
+        <%- include("../partials/header") -%> 
+
+        <div class="divEditPerfil">
+        <section id="userProfile">
+            <h1>Eliminar Cuenta</h1>
+        </section>
+
+        <form action="/users/deleteAccount/<%= user.id %>?_method=DELETE" id="form" method="post">
+            <div class="infoProfile">
+                <label> Presione el boton para que toda la información y archivos asociados a su cuenta sean eliminados.</label>
+                <span style="color: red;">Peligro: Esta accion no se podra revertir.</span>
+                <button type="submit">Eliminar</button>
+            </div>
+        </form>
+    </div>
+
+        <%- include("../partials/footer")  %> 
+    </div>
+    <script src="/js/header.js"></script>
+</body>
+
+</html>
