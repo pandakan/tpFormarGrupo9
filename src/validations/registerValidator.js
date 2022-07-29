@@ -5,7 +5,7 @@ const db = require("../database/models");
 let validateRegister = [
     check("name")
         .notEmpty().withMessage("Debe ingresar un nombre").bail()
-        .isLength({ min: 3}).withMessage("Ingrese un nombre válido"),
+        .isLength({ min: 3}).withMessage("Ingrese 3 caracteres como mínimo"),
     check("email")
         .notEmpty().withMessage("Debe ingresar un email").bail()
         .isEmail().withMessage("Ingrese un email válido"),

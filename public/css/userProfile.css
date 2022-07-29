@@ -72,7 +72,8 @@ html body div.container form div.infoProfile img {
     html body div.container div.divPerfil{
         display: flex;
         align-items: flex-start;
-        justify-content: space-evenly;
+        justify-content: center;
+        gap: 50px;
     }
 
     html body div.container div.divPerfil form{
@@ -102,8 +103,4 @@ html body div.container form div.infoProfile img {
         margin-left: auto;
         margin-right: auto;
     }
-}
-
-@media (min-width: 1200px){ 
-
 }

@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
                 }
                 errors.name = true
                 break;
-            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 4):
+            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 3):
                 $errorName.innerHTML = "Ingrese un nombre válido"
                 if ($errorBackName) {
                     $errorBackName.innerHTML = ""
@@ -193,7 +193,6 @@ window.addEventListener("load", () => {
     })
 
     $formulario.addEventListener("submit", function (event) {
-        console.log(errors)
         event.preventDefault()
 
         if (!$inputTerms.checked) {

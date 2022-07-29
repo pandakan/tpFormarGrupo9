@@ -24,7 +24,7 @@
                 <label for="email">Email</label>
                 <input type="email"  class="input-style" id="email" name="email" placeholder="Email" value="<%= user.email ? user.email : "" %>"/>
                 <% if (locals.errors && errors.email) { %>
-                    <span class="error-message" id="errorBackName"><%= errors.email.msg %></span>
+                    <span class="error-message" id="errorBackEmail"><%= errors.email.msg %></span>
                 <% } %>
                 <span id="errorEmail" style="color: red;"></span>
 
@@ -46,6 +46,7 @@
                 <label for="phone">Numero de Telefono</label>
                 <input type="number" class="input-style" id="phone" name="phone" placeholder="Numero de Telefono" value="<%= user.phone ? user.phone : null %>"/>
 
+                <span id="errorSubmit" style="color: red;"></span>
                 <button type="submit">EDITAR</button>
             </div>
         </form>
@@ -54,6 +55,7 @@
         <%- include("../partials/footer")  %> 
     </div>
     <script src="/js/header.js"></script>
+    <script src="/js/editProfileValidatorFront.js"></script>
 </body>
 
 </html>
