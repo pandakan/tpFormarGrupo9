@@ -113,16 +113,25 @@ module.exports = {
             if(result){
                 res.redirect('/admin/categorias');
             }else{
-                res.send("No se pudo actualizar");
+                console.log("No se pudo actualizar");
             }
         })
         .catch(error => res.send(error));
         } else {
-            res.render("admin/categories/addCategory", {
+
+            let idCategory = +req.params.id;
+
+            db.Category.findByPk(idCategory)
+            .then(categoria => {
+
+            res.render("admin/categories/editCategory", {
+                categoria: categoria,
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
             });
+            })
+            .catch(error => console.log(error));
         }
 
 
